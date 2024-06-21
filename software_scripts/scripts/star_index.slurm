@@ -28,10 +28,10 @@ FASTA="/share/workshop/mrnaseq_workshop/Data/GRCm39.primary_assembly.genome.fa"
 #wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M32/gencode.vM32.primary_assembly.annotation.gtf.gz
 #gunzip gencode.vM32.primary_assembly.annotation.gtf.gz
 #GTF="../gencode.vM32.primary_assembly.annotation.gtf"
-GTF="/share/workshop/mrnaseq_workshop/Data/gencode.vM32.primary_assembly.basic.annotation.gtf"
+GTF="/share/workshop/mrnaseq_workshop/Data/gencode.vM35.annotation.gtf"
 
-mkdir star.overlap100.gencode.M32
-cd star.overlap100.gencode.M32
+mkdir star.overlap100.gencode.M35
+cd star.overlap100.gencode.M35
 
 module load star
 
