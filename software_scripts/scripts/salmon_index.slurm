@@ -20,13 +20,13 @@ outpath="References"
 mkdir -p ${outpath}
 cd ${outpath}
 
-#wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M32/gencode.vM32.transcripts.fa.gz
-#zcat gencode.vM32.pc_transcripts.fa.gz |cat - GRCm39.primary_assembly.genome.fa > decoy.aware.gencode.vM32.transcripts.fa
+#wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M35/gencode.vM35.transcripts.fa.gz
+#zcat gencode.vM35.pc_transcripts.fa.gz |cat - GRCm39.primary_assembly.genome.fa > decoy.aware.gencode.vM35.transcripts.fa
 grep "^>" /share/workshop/mrnaseq_workshop/Data/GRCm39.primary_assembly.genome.fa |cut -d " " -f 1 > decoys.txt
 sed -i -e 's/>//g' decoys.txt
 
-TP_FASTA="/share/workshop/mrnaseq_workshop/Data/decoy.aware.gencode.vM32.transcripts.fa"
-INDEX="salmon_gencode.vM32.index"
+TP_FASTA="/share/workshop/mrnaseq_workshop/Data/decoy.aware.gencode.vM35.transcripts.fa"
+INDEX="salmon_gencode.vM35.index"
 
 module load salmon
 call="salmon index -i ${INDEX} -k 31 --gencode -p 8 -t ${TP_FASTA} --decoys decoys.txt"

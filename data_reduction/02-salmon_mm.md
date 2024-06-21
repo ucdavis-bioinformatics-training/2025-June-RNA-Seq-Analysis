@@ -3,8 +3,8 @@
 *This document assumes [preproc htstream](./preproc_htstream.md) has been completed.*
 **IF** for some reason it didn't finish, is corrupted or you missed the session, you can link over a completed copy
 ```
-cp -r /share/biocore/workshops/2023-June-mRNASeq/HTS_testing /share/workshop/mrnaseq_workshop/$USER/rnaseq_example/.
-ln -s /share/biocore/workshops/2023-June-mRNASeq/01-HTS_Preproc /share/workshop/mrnaseq_workshop/$USER/rnaseq_example/.
+cp -r /share/workshop/mrnaseq_workshop/jli/rnaseq_example/HTS_testing /share/workshop/mrnaseq_workshop/$USER/rnaseq_example/.
+ln -s /share/workshop/mrnaseq_workshop/jli/rnaseq_example/01-HTS_Preproc /share/workshop/mrnaseq_workshop/$USER/rnaseq_example/.
 ```
 
 ## Salmon Aligner
@@ -40,7 +40,7 @@ ln -s /share/biocore/workshops/2023-June-mRNASeq/01-HTS_Preproc /share/workshop/
 1. First we need to index the transcriptome for salmon. Lets pull down a slurm script to get and index the mouse GENCODE version of the transcriptome.
 
     ```bash
-    wget https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2023-June-RNA-Seq-Analysis/master/software_scripts/scripts/salmon_index.slurm
+    wget https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2024-June-RNA-Seq-Analysis/master/software_scripts/scripts/salmon_index.slurm
     less salmon_index.slurm
     ```
 
@@ -140,7 +140,7 @@ ln -s /share/biocore/workshops/2023-June-mRNASeq/01-HTS_Preproc /share/workshop/
 
     ```bash
     cd /share/workshop/mrnaseq_workshop/$USER/rnaseq_example  # We'll run this from the main directory
-    wget https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2023-June-RNA-Seq-Analysis/master/software_scripts/scripts/salmon.slurm
+    wget https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2024-June-RNA-Seq-Analysis/master/software_scripts/scripts/salmon.slurm
     less salmon.slurm
     ```
 
@@ -251,7 +251,7 @@ ln -s /share/biocore/workshops/2023-June-mRNASeq/01-HTS_Preproc /share/workshop/
 
     ```bash
     cd /share/workshop/mrnaseq_workshop/$USER/rnaseq_example  # We'll run this from the main directory
-    wget https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2023-June-RNA-Seq-Analysis/master/software_scripts/scripts/salmon_stats.R
+    wget https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2024-June-RNA-Seq-Analysis/master/software_scripts/scripts/salmon_stats.R
 	module load R
 	R CMD BATCH salmon_stats.R
     ```
