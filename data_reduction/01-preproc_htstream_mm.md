@@ -1,6 +1,6 @@
 # Sequence Preprocessing
 
-This document assumes [project_setup](./00_project_setup_mm.md) has been completed.
+This document assumes [project_setup](./00-project_setup_mm.md) has been completed.
 
 ```bash
 cd /share/workshop/mrnaseq_workshop/$USER/rnaseq_example
