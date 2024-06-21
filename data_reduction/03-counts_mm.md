@@ -122,14 +122,14 @@ In this section, we will collate all of the count data into one file for analysi
 
     And now you have a raw counts file that has a count for every gene, per sample. You will use this file for the next step, which is analysis in R.
 
-1. Transfer rnaseq_workshop_counts.txt and samples.txt to your computer using scp or winSCP, or copy/paste from cat [sometimes doesn't work],  
+1. The alignment exercise and the above exercise to generate the counts table used a subset of the original data. But we are goint to transfer the counts table generated using the full data set and samples.txt to your computer using scp or winSCP, or copy/paste from cat [sometimes doesn't work],  
 
     In Mac/Linux, users can use scp. Windows users use WinSCP. In a new shell session on my laptop. **NOT logged into tadpole. Replace my [your_username] with your username.**
 
     ```bash
     mkdir -p ~/rnaseq_workshop
     cd ~/rnaseq_workshop
-    scp [your_username]@tadpole.genomecenter.ucdavis.edu:/share/workshop/mrnaseq_workshop/[your_username]/rnaseq_example/03-Counts/rnaseq_workshop_counts.txt .
+    scp [your_username]@tadpole.genomecenter.ucdavis.edu:/share/workshop/mrnaseq_workshop/Data/rnaseq_workshop_counts.txt .
     scp [your_username]@tadpole.genomecenter.ucdavis.edu:/share/workshop/mrnaseq_workshop/[your_username]/rnaseq_example/samples.txt .
     ```
 
