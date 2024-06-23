@@ -325,7 +325,7 @@ ln -s /share/workshop/mrnaseq_workshop/jli/rnaseq_example/01-HTS_Preproc /share/
     ```bash
     mkdir -p ~/rnaseq_workshop
     cd ~/rnaseq_workshop
-    scp [your_username]@tadpole.genomecenter.ucdavis.edu:/share/workshop/mrnaseq_workshop/[your_username]/rnaseq_example/03-Counts/rnaseq_salmon_workshop_counts.txt .
+    scp [your_username]@tadpole.genomecenter.ucdavis.edu:/share/workshop/mrnaseq_workshop/Data/rnaseq_salmon_workshop_counts.txt .
     ```
 
     Its ok of the mkdir command fails ("File exists") because we aleady created the directory earlier.
