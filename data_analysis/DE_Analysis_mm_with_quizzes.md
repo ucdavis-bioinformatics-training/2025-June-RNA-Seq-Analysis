@@ -85,8 +85,8 @@ function showResults(myq, qc, rc){
 * Generally speaking differential expression analysis is performed in a very similar manner to metabolomics, proteomics, or DNA microarrays, once normalization and transformations have been performed.
 
 A lot of RNA-seq analysis has been done in R and so there are many packages available to analyze and view this data. Two of the most commonly used are:
-* DESeq2, developed by Simon Anders (also created htseq) in Wolfgang Huberís group at EMBL
-* edgeR and Voom (extension to Limma [microarrays] for RNA-seq), developed out of Gordon Smythís group from the Walter and Eliza Hall Institute of Medical Research in Australia
+* DESeq2, developed by Simon Anders (also created htseq) in Wolfgang Huber‚Äôs group at EMBL
+* edgeR and Voom (extension to Limma [microarrays] for RNA-seq), developed out of Gordon Smyth‚Äôs group from the Walter and Eliza Hall Institute of Medical Research in Australia
 
 http://bioconductor.org/packages/release/BiocViews.html#___RNASeq
 
@@ -375,10 +375,10 @@ submitButton1.addEventListener('click', function() {showResults(myQuestions1, qu
 
 In differential expression analysis, only sample-specific effects need to be normalized, we are NOT concerned with comparisons and quantification of absolute expression.
 
-* Sequence depth ñ is a sample specific effect and needs to be adjusted for.
+* Sequence depth ‚Äì is a sample specific effect and needs to be adjusted for.
 * RNA composition - finding a set of scaling factors for the library sizes that minimize the log-fold changes between the samples for most genes (edgeR uses a trimmed mean of M-values between each pair of sample)
-* GC content ñ is NOT sample-specific (except when it is)
-* Gene Length ñ is NOT sample-specific (except when it is)
+* GC content ‚Äì is NOT sample-specific (except when it is)
+* Gene Length ‚Äì is NOT sample-specific (except when it is)
 
 In edgeR/limma, you calculate normalization factors to scale the raw library sizes (number of reads) using the function calcNormFactors, which by default uses TMM (weighted trimmed means of M values to the reference). Assumes most genes are not DE.
 
@@ -486,7 +486,7 @@ The MDS plot tells you **A LOT** about what to expect from your experiment.
 ### RPKM vs. FPKM vs. CPM and Model Based
 * RPKM - Reads per kilobase per million mapped reads
 * FPKM - Fragments per kilobase per million mapped reads
-* logCPM ñ log Counts per million [ good for producing MDS plots, estimate of normalized values in model based ]
+* logCPM ‚Äì log Counts per million [ good for producing MDS plots, estimate of normalized values in model based ]
 * Model based - original read counts are not themselves transformed, but rather correction factors are used in the DE model itself. 
 
 We use the `cpm` function with log=TRUE to obtain log-transformed normalized expression data.  On the log scale, the data has less mean-dependent variability and is more suitable for plotting.
@@ -686,7 +686,7 @@ Simply a must! Best choices are:
 
 The FDR (or qvalue) is a statement about the list and is no longer about the gene (pvalue). So a FDR of 0.05, says you expect 5% false positives among the list of genes with an FDR of 0.05 or less.
 
-The statement ìStatistically significantly differentî means FDR of 0.05 or less.
+The statement ‚ÄúStatistically significantly different‚Äù means FDR of 0.05 or less.
 
 **7a\.** How many DE genes are there (false discovery rate corrected)?
 
