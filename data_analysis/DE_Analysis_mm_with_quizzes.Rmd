@@ -139,7 +139,7 @@ d0 <- DGEList(counts)
   
 **1a\.** Read in Annotation
 ```{r read_annotation}
-anno <- read.delim("ensembl_mm_109.txt",as.is=T)
+anno <- read.delim("ensembl_mm_112.txt",as.is=T)
 dim(anno)
 head(anno)
 tail(anno)
