@@ -308,7 +308,7 @@ Paste contents of mouse_rrna.fa and save
 This is *really* cheating, but if all else fails, download the file as follows:
 ```bash
 cd /share/workshop/mrnaseq_workshop/$USER/rnaseq_example/References
-wget https://ucdavis-bioinformatics-training.github.io/2024-June-RNA-Seq-Analysis/raw/master/data_reduction/mouse_rrna.fasta
+wget https://ucdavis-bioinformatics-training.github.io/2024-June-RNA-Seq-Analysis/data_reduction/mouse_rrna.fasta
 ```
 
 ### Using HTStream to count ribosomal rna (not remove, but just to count the occurrences).
