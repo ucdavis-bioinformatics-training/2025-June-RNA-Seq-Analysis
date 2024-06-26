@@ -10,7 +10,7 @@
 
 1. To align our data we will need the genome (fasta) and annotation (gtf) for mouse. There are many places to find them, but we are going to get them from the [GENCODE](https://www.gencodegenes.org/mouse/).
 
-    We need to first get the url for the genome and annotation gtf. For RNAseq we want to use the primary genome chromosomes and comprehensive gene annotation. At the time of this workshop the current version of GENCODE is *M35* . You will want to update the scripts to use the current version.
+    We need to first get the url for the genome and annotation gtf. For RNAseq we want to use the primary genome chromosomes and basic gene annotation. At the time of this workshop the current version of GENCODE is *M35* . You will want to update the scripts to use the current version.
 
     We will need:
 
