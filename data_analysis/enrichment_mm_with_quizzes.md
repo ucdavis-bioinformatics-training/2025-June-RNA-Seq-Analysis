@@ -709,7 +709,9 @@ head(geneList.KEGG)
 ## 46.30958 41.37645 40.66526 36.61842 36.45324 36.41880
 ```
 
+
 ``` r
+set.seed(99)
 KEGG.results <- gseKEGG(gene = geneList.KEGG, organism = "mmu", pvalueCutoff = 1)
 ```
 
@@ -750,39 +752,39 @@ head(outdat)
 ```
 ##                ID
 ## mmu05200 mmu05200
-## mmu04015 mmu04015
 ## mmu05165 mmu05165
 ## mmu04970 mmu04970
-## mmu05160 mmu05160
 ## mmu04961 mmu04961
+## mmu04015 mmu04015
+## mmu05160 mmu05160
 ##                                                                                     Description
 ## mmu05200                                        Pathways in cancer - Mus musculus (house mouse)
-## mmu04015                                    Rap1 signaling pathway - Mus musculus (house mouse)
 ## mmu05165                            Human papillomavirus infection - Mus musculus (house mouse)
 ## mmu04970                                        Salivary secretion - Mus musculus (house mouse)
-## mmu05160                                               Hepatitis C - Mus musculus (house mouse)
 ## mmu04961 Endocrine and other factor-regulated calcium reabsorption - Mus musculus (house mouse)
+## mmu04015                                    Rap1 signaling pathway - Mus musculus (house mouse)
+## mmu05160                                               Hepatitis C - Mus musculus (house mouse)
 ##          setSize enrichmentScore      NES       pvalue     p.adjust
-## mmu05200     383       0.3775237 1.724889 1.103098e-07 3.651253e-05
-## mmu04015     156       0.4494154 1.869919 3.271748e-06 3.954051e-04
-## mmu05165     243       0.4007015 1.742426 3.583732e-06 3.954051e-04
-## mmu04970      47       0.6289045 2.161085 6.655225e-06 5.507198e-04
-## mmu05160     122       0.4685525 1.864687 8.948033e-06 5.923598e-04
-## mmu04961      34       0.6843389 2.167674 1.688159e-05 8.417262e-04
+## mmu05200     383       0.3775237 1.706969 1.247349e-07 4.128726e-05
+## mmu05165     243       0.4007015 1.736567 1.902410e-06 3.148489e-04
+## mmu04970      47       0.6289045 2.105886 4.779633e-06 5.273529e-04
+## mmu04961      34       0.6843389 2.164339 6.445738e-06 5.333848e-04
+## mmu04015     156       0.4494154 1.849634 8.060359e-06 5.335958e-04
+## mmu05160     122       0.4685525 1.882945 1.117934e-05 6.167271e-04
 ##                qvalue rank                   leading_edge
-## mmu05200 2.438426e-05 2374 tags=29%, list=18%, signal=25%
-## mmu04015 2.640644e-04 2310 tags=35%, list=17%, signal=29%
-## mmu05165 2.640644e-04 2404 tags=30%, list=18%, signal=26%
-## mmu04970 3.677887e-04 1135  tags=34%, list=8%, signal=31%
-## mmu05160 3.955973e-04 2310 tags=41%, list=17%, signal=34%
-## mmu04961 5.621323e-04 1164  tags=32%, list=9%, signal=30%
+## mmu05200 2.809818e-05 2374 tags=29%, list=18%, signal=25%
+## mmu05165 2.142714e-04 2404 tags=30%, list=18%, signal=26%
+## mmu04970 3.588918e-04 1135  tags=34%, list=8%, signal=31%
+## mmu04961 3.629968e-04 1164  tags=32%, list=9%, signal=30%
+## mmu04015 3.631404e-04 2310 tags=35%, list=17%, signal=29%
+## mmu05160 4.197157e-04 2310 tags=41%, list=17%, signal=34%
 ##                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             core_enrichment
 ## mmu05200 Plcb1/Notch1/Pparg/Fn1/Gnaq/Ets1/Cdkn1b/Cebpa/Zbtb16/Met/Fzd7/Jag1/Adcy7/Jup/Rxra/Hes1/Rassf5/Pdgfb/Vegfc/Pten/Raf1/Itgb1/Mgst1/Csf2rb2/Ccnd2/Traf1/Gng2/Rb1/Cxcr4/Mitf/Tcf7l2/Bcl2/Col4a2/Il2rg/Calm1/Arhgef1/Cdh1/Rasgrp2/Apaf1/Il3ra/Bcl2l11/Pld1/Rasgrp1/Tgfbr1/Nfe2l2/Dvl1/Stat2/E2f2/Il6st/Araf/Bad/Cks2/Pdgfrb/Prkcb/Egln3/Casp8/Prkacb/Traf3/Esr1/Brca2/Adcy9/Cdk6/Tgfbr2/Col4a1/Stat5b/Bcr/Map2k1/Nfkb1/Camk2g/Gngt2/Lrp6/Smad3/Stat3/Smo/Fas/Ralb/Jak2/Pik3cd/Kras/Akt3/Pik3r2/Hgf/Itgav/Spi1/Pim2/Nfkbia/Crk/Tfg/Akt1/Gadd45g/Mgst3/Calml4/Elk1/Csf1r/Egln2/Il15/Ednrb/Traf2/Gnb1/Sp1/Ppard/Mlh1/Fgfr1/Itga3/Lpar4/Keap1/Chuk/Mapk3/Gng10/Ptger4/Txnrd1
-## mmu04015                                                                                                                                                                                                                                                                                                                                     Plcb1/Sipa1l1/Gnaq/Met/Adcy7/P2ry1/Tiam1/Rassf5/Pdgfb/Vegfc/Raf1/Itgb1/Afdn/Itgal/Fpr1/Insr/Vasp/Prkd2/Thbs1/Calm1/Evl/Rras/Cdh1/Rasgrp2/Sipa1l3/Rap1b/Rapgef5/Itgb2/Pdgfrb/Prkcb/Adcy9/Rapgef1/Map2k1/Rap1a/Ralb/Pik3cd/Kras/Akt3/Pik3r2/Hgf/Prkci/Crk/Arap3/Akt1/Vav3/Calml4/Csf1r/Rgs14/Apbb1ip/Tln2/Fgfr1/Lcp2/Lpar4/Mapk3
 ## mmu05165                                                                                                                                                                                                        Notch1/Fn1/Itga1/H2-Q6/Cdkn1b/Fzd7/Jag1/Hes1/Pten/Raf1/Itgb1/Atp6v1b2/Ccnd2/Atp6v1a/Tbpl1/Rb1/Tcf7l2/Thbs1/Col4a2/Vwf/H2-K1/Tyk2/Isg15/Scrib/Maml2/Dvl1/Stat2/H2-Q7/Lfng/Ppp2r5c/Atp6v0c/Itga5/Bad/Pdgfrb/Casp8/Prkacb/Traf3/H2-Q4/Cdk6/Eif2ak2/Col4a1/Mx1/H2-T10/Map2k1/Nfkb1/Creb3l2/Fas/H2-D1/Pik3cd/Mx2/Kras/Akt3/Pik3r2/Tcirg1/Ppp2r1b/Itgav/Irf3/Atp6v1g1/Oasl2/Llgl2/Prkci/H2-T24/Akt1/Ikbke/Oasl1/Dlg1/Itga3/Tnf/Chuk/Nfx1/Mapk3/Ptger4/Itgb7/Itgb5
 ## mmu04970                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Plcb1/Gnaq/Adrb1/Adcy7/Atp2b1/Slc12a2/Atp1a1/Bst1/Calm1/Adrb2/Lyz2/Itpr1/Prkcb/Cst3/Prkacb/Adcy9
-## mmu05160                                                                                                                                                                                                                                                                                                                                                                     Cd81/Rxra/Raf1/Rb1/Nr1h3/Tyk2/Apaf1/Rnasel/Stat2/E2f2/Araf/Bad/Eif2ak4/Rsad2/Casp8/Traf3/Cdk6/Eif2ak2/Cxcl10/Mx1/Ifit1/Map2k1/Nfkb1/Eif3e/Oas1a/Ywhaz/Stat3/Socs3/Fas/Pik3cd/Mx2/Kras/Akt3/Pik3r2/Ppp2r1b/Irf3/Rigi/Nfkbia/Ifit1bl1/Akt1/Ikbke/Cldn20/Oas2/Mavs/Traf2/Irf7/Oas3/Tnf/Chuk/Mapk3
 ## mmu04961                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Plcb1/Gnaq/Ap2a2/Atp2b1/Atp1a1/Clta/Prkcb/Prkacb/Esr1/Adcy9/Cltb
+## mmu04015                                                                                                                                                                                                                                                                                                                                     Plcb1/Sipa1l1/Gnaq/Met/Adcy7/P2ry1/Tiam1/Rassf5/Pdgfb/Vegfc/Raf1/Itgb1/Afdn/Itgal/Fpr1/Insr/Vasp/Prkd2/Thbs1/Calm1/Evl/Rras/Cdh1/Rasgrp2/Sipa1l3/Rap1b/Rapgef5/Itgb2/Pdgfrb/Prkcb/Adcy9/Rapgef1/Map2k1/Rap1a/Ralb/Pik3cd/Kras/Akt3/Pik3r2/Hgf/Prkci/Crk/Arap3/Akt1/Vav3/Calml4/Csf1r/Rgs14/Apbb1ip/Tln2/Fgfr1/Lcp2/Lpar4/Mapk3
+## mmu05160                                                                                                                                                                                                                                                                                                                                                                     Cd81/Rxra/Raf1/Rb1/Nr1h3/Tyk2/Apaf1/Rnasel/Stat2/E2f2/Araf/Bad/Eif2ak4/Rsad2/Casp8/Traf3/Cdk6/Eif2ak2/Cxcl10/Mx1/Ifit1/Map2k1/Nfkb1/Eif3e/Oas1a/Ywhaz/Stat3/Socs3/Fas/Pik3cd/Mx2/Kras/Akt3/Pik3r2/Ppp2r1b/Irf3/Rigi/Nfkbia/Ifit1bl1/Akt1/Ikbke/Cldn20/Oas2/Mavs/Traf2/Irf7/Oas3/Tnf/Chuk/Mapk3
 ```
 
 Gene set enrichment analysis output includes the following columns:
@@ -878,16 +880,16 @@ myQuestions2 = [
   {
     question: "How many pathways have an adjusted p-value less than 0.05?",
     answers: {
-      a: "67",
+      a: "69",
       b: "331",
-      c: "108"
+      c: "101"
     },
     correctAnswer: "a"
   },
   {
       question: "Which pathway has the most genes annotated to it?'",
     answers: {
-      a: "Pathways in cancer - Mus musculus (house mouse)",
+      a: "Glycine, serine and threonine metabolism - Mus musculus (house mouse)",
       b: "Virion - Herpesvirus - Mus musculus (house mouse)",
       c: "Pathways in cancer - Mus musculus (house mouse)"
     },

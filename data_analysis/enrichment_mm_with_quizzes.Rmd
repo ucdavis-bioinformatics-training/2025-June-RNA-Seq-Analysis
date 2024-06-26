@@ -297,7 +297,9 @@ geneList.KEGG <- sort(geneList.KEGG, decreasing = TRUE)
 names(geneList.KEGG) <- DE.nodupENTREZ$ENTREZID
 head(geneList.KEGG)
 ```
+
 ```{r, warning = FALSE}
+set.seed(99)
 KEGG.results <- gseKEGG(gene = geneList.KEGG, organism = "mmu", pvalueCutoff = 1)
 KEGG.results <- setReadable(KEGG.results, OrgDb = "org.Mm.eg.db", keyType = "ENTREZID")
 outdat <- as.data.frame(KEGG.results)
@@ -382,7 +384,7 @@ myQuestions2 = [
   {
       question: "Which pathway has the most genes annotated to it?'",
     answers: {
-      a: "`r outdat$Description[1]`",
+      a: "`r outdat$Description[nrow(outdat)]`",
       b: "`r outdat$Description[which.min(outdat$setSize)]`",
       c: "`r outdat$Description[which.max(outdat$setSize)]`"
     },
