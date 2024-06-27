@@ -13,7 +13,7 @@ Set some options and make sure the packages edgeR, gplots, RColorBrewer, topGO, 
 
 In the R console run the following commands *one at a time*:
 ```r
-if (!requireNamespace("BiocManager", quietly = TRUE))
+if (!requireNamespace("BiocManager", quietly = TRUE)){
   install.packages("BiocManager")
 }
 
