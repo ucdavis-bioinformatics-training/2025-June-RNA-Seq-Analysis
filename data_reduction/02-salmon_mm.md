@@ -23,9 +23,9 @@ ln -s /share/workshop/mrnaseq_workshop/jli/rnaseq_example/01-HTS_Preproc /share/
 
 1. To align our data we will need the transcriptome (fasta) and annotation (gtf) for mouse. There are many places to find them, but we are going to get it from the [GENCODE](https://www.gencodegenes.org/mouse/).
 
-    We need to first get the urls for the and protein coding genes. For RNAseq we want to use the protein coding transcript sequences and basic gene annotation. At the time of this workshop the current version of GENCODE is *M35*. You will want to update the scripts to use the current version.
+    We need to first get the urls for the transcript sequences. For RNAseq we want to use the transcript sequences and basic gene annotation. At the time of this workshop the current version of GENCODE is *M35*. You will want to update the scripts to use the current version.
 
-    <img src="alignment_mm_figures/MM_pc_transcript_sequences.png" alt="mouse_gencode1" width="80%" style="border:5px solid #ADD8E6;"/>
+    <img src="alignment_mm_figures/MM_transcript_sequences.png" alt="mouse_gencode1" width="80%" style="border:5px solid #ADD8E6;"/>
 
     <img src="alignment_mm_figures/MM_basic_gene_annotation.png" alt="mouse_gencode2" width="80%" style="border:5px solid #ADD8E6;"/>
 
