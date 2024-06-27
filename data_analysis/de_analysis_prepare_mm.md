@@ -91,7 +91,7 @@ download.file("https://raw.githubusercontent.com/ucdavis-bioinformatics-training
 ```
 
 ```r
-download.file("https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2024-June-RNA-Seq-Analysis/master/datasets/ensembl_mm_109.txt", "ensembl_mm_112.txt")
+download.file("https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2024-June-RNA-Seq-Analysis/master/datasets/ensembl_mm_112.txt", "ensembl_mm_112.txt")
 ```
 
 #### For the salmon datasets
