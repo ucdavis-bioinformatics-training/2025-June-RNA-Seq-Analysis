@@ -15,6 +15,7 @@ In the R console run the following commands *one at a time*:
 ```r
 if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
+}
 
 if (!any(rownames(installed.packages()) == "edgeR")){
   BiocManager::install("edgeR")
