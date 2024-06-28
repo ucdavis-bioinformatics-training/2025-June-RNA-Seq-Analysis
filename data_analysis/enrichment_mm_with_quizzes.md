@@ -448,6 +448,9 @@ Next, we use Fisher's exact test to test for GO enrichment among significantly D
 Create topGOdata object:
 
 ``` r
+geneList <- DE.nodupENTREZ$adj.P.Val
+names(geneList) <- DE.nodupENTREZ$ENTREZID
+
 # Create topGOData object
 GOdata <- new("topGOdata",
 	ontology = "BP",
@@ -493,7 +496,7 @@ resultFisher <- runTest(GOdata, algorithm = "elim", statistic = "fisher")
 ## 
 ## 			 -- Elim Algorithm -- 
 ## 
-## 		 the algorithm is scoring 13301 nontrivial nodes
+## 		 the algorithm is scoring 13091 nontrivial nodes
 ## 		 parameters: 
 ## 			 test statistic: fisher
 ## 			 cutOff: 0.01
@@ -511,87 +514,87 @@ resultFisher <- runTest(GOdata, algorithm = "elim", statistic = "fisher")
 
 ```
 ## 
-## 	 Level 17:	49 nodes to be scored	(12 eliminated genes)
+## 	 Level 17:	46 nodes to be scored	(12 eliminated genes)
 ```
 
 ```
 ## 
-## 	 Level 16:	85 nodes to be scored	(12 eliminated genes)
+## 	 Level 16:	82 nodes to be scored	(22 eliminated genes)
 ```
 
 ```
 ## 
-## 	 Level 15:	119 nodes to be scored	(81 eliminated genes)
+## 	 Level 15:	116 nodes to be scored	(77 eliminated genes)
 ```
 
 ```
 ## 
-## 	 Level 14:	248 nodes to be scored	(106 eliminated genes)
+## 	 Level 14:	244 nodes to be scored	(102 eliminated genes)
 ```
 
 ```
 ## 
-## 	 Level 13:	551 nodes to be scored	(268 eliminated genes)
+## 	 Level 13:	536 nodes to be scored	(277 eliminated genes)
 ```
 
 ```
 ## 
-## 	 Level 12:	993 nodes to be scored	(400 eliminated genes)
+## 	 Level 12:	973 nodes to be scored	(538 eliminated genes)
 ```
 
 ```
 ## 
-## 	 Level 11:	1502 nodes to be scored	(1753 eliminated genes)
+## 	 Level 11:	1460 nodes to be scored	(2064 eliminated genes)
 ```
 
 ```
 ## 
-## 	 Level 10:	1790 nodes to be scored	(2196 eliminated genes)
+## 	 Level 10:	1760 nodes to be scored	(2215 eliminated genes)
 ```
 
 ```
 ## 
-## 	 Level 9:	1964 nodes to be scored	(2961 eliminated genes)
+## 	 Level 9:	1924 nodes to be scored	(3237 eliminated genes)
 ```
 
 ```
 ## 
-## 	 Level 8:	1901 nodes to be scored	(3821 eliminated genes)
+## 	 Level 8:	1879 nodes to be scored	(3919 eliminated genes)
 ```
 
 ```
 ## 
-## 	 Level 7:	1672 nodes to be scored	(4689 eliminated genes)
+## 	 Level 7:	1659 nodes to be scored	(4558 eliminated genes)
 ```
 
 ```
 ## 
-## 	 Level 6:	1252 nodes to be scored	(5645 eliminated genes)
+## 	 Level 6:	1246 nodes to be scored	(5649 eliminated genes)
 ```
 
 ```
 ## 
-## 	 Level 5:	682 nodes to be scored	(6903 eliminated genes)
+## 	 Level 5:	678 nodes to be scored	(6209 eliminated genes)
 ```
 
 ```
 ## 
-## 	 Level 4:	339 nodes to be scored	(8294 eliminated genes)
+## 	 Level 4:	334 nodes to be scored	(7481 eliminated genes)
 ```
 
 ```
 ## 
-## 	 Level 3:	110 nodes to be scored	(9426 eliminated genes)
+## 	 Level 3:	110 nodes to be scored	(8857 eliminated genes)
 ```
 
 ```
 ## 
-## 	 Level 2:	18 nodes to be scored	(9444 eliminated genes)
+## 	 Level 2:	18 nodes to be scored	(8857 eliminated genes)
 ```
 
 ```
 ## 
-## 	 Level 1:	1 nodes to be scored	(11119 eliminated genes)
+## 	 Level 1:	1 nodes to be scored	(10926 eliminated genes)
 ```
 
 ``` r
@@ -602,19 +605,19 @@ head(tab)
 
 ```
 ##        GO.ID                                                               Term
-## 1 GO:0045944          positive regulation of transcription by RNA polymerase II
-## 2 GO:0032731               positive regulation of interleukin-1 beta production
-## 3 GO:0051241            negative regulation of multicellular organismal process
+## 1 GO:0032731               positive regulation of interleukin-1 beta production
+## 2 GO:0045944          positive regulation of transcription by RNA polymerase II
+## 3 GO:1901224 positive regulation of non-canonical NF-kappaB signal transduction
 ## 4 GO:0001525                                                       angiogenesis
-## 5 GO:0042742                                      defense response to bacterium
-## 6 GO:1901224 positive regulation of non-canonical NF-kappaB signal transduction
+## 5 GO:0051607                                          defense response to virus
+## 6 GO:0042742                                      defense response to bacterium
 ##   Annotated Significant Expected raw.p.value
-## 1       890         635   571.68     1.9e-06
-## 2        61          55    39.18     3.7e-06
-## 3       840         623   539.56     8.3e-06
-## 4       381         283   244.73     1.4e-05
-## 5       206         160   132.32     1.9e-05
-## 6        54          48    34.69     3.9e-05
+## 1        61          53    35.90     1.8e-06
+## 2       890         589   523.85     2.0e-06
+## 3        54          47    31.78     6.5e-06
+## 4       381         272   224.26     6.6e-06
+## 5       263         193   154.80     1.9e-05
+## 6       206         154   121.25     2.1e-05
 ```
 * Annotated: number of genes (in our gene list) that are annotated with the term
 * Significant: Number of significantly DE genes annotated with that term (i.e. genes where geneList = 1)

@@ -123,6 +123,9 @@ Next, we use Fisher's exact test to test for GO enrichment among significantly D
 
 Create topGOdata object:
 ```{r}
+geneList <- DE.nodupENTREZ$adj.P.Val
+names(geneList) <- DE.nodupENTREZ$ENTREZID
+
 # Create topGOData object
 GOdata <- new("topGOdata",
 	ontology = "BP",
