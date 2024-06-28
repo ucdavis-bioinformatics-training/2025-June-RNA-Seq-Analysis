@@ -198,7 +198,7 @@ When building a new pipeline, it is almost always a good idea to use a small sub
 
     * *What happens if you run hts_Stats without piping output to out.tab? (results are output to the screen)*
 
-    * *Can you think of a way to view the output from hts_Stats in __less__ without creating out.tab? (by replacing "> out.tab" by "|less")*
+    * *Can you think of a way to view the output from hts_Stats in __less__ without creating out.tab? (by replacing "> out.tab" by ```|``` less)*
 
     By default, all HTS apps output tab formatted files to the stdout.
 
@@ -359,7 +359,7 @@ wget https://ucdavis-bioinformatics-training.github.io/2024-June-RNA-Seq-Analysi
     **Questions**
     * *What new parameters did we use here?*
 
-    * *What parameter is SeqScreener using that specifies how reads are input? (using |)*
+    * *What parameter is SeqScreener using that specifies how reads are input? (using ```|```)*
 
     * *Look at the file mouse_110_WT_C.streamed.json*
 
