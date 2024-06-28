@@ -175,7 +175,7 @@ When building a new pipeline, it is almost always a good idea to use a small sub
 
     So we ```zcat``` (uncompress and send to stdout), pipe ```|```  to ```head``` (param -400000) then pipe to ```gzip``` to recompress and name our files subset.
 
-    * *How many reads are we going to analyze in our subset?*
+    * *How many reads are we going to analyze in our subset? (100000)*
 
 1. Now we'll run our first preprocessing step ```hts_Stats```, first loading the module and then looking at help.
 
@@ -185,7 +185,7 @@ When building a new pipeline, it is almost always a good idea to use a small sub
     hts_Stats --help
     ```
 
-    * *What version of hts_Stats is loaded?*
+    * *What version of hts_Stats is loaded? (v1.3.3)*
 
 
 1. Now lets run ```hts_Stats``` and look at the output.
@@ -196,9 +196,9 @@ When building a new pipeline, it is almost always a good idea to use a small sub
               -L mouse_110_WT_C.stats.json > out.tab
     ```
 
-    * *What happens if you run hts_Stats without piping output to out.tab?*
+    * *What happens if you run hts_Stats without piping output to out.tab? (results are output to the screen)*
 
-    * *Can you think of a way to view the output from hts_Stats in __less__ without creating out.tab?*
+    * *Can you think of a way to view the output from hts_Stats in __less__ without creating out.tab? (by replacing "> out.tab" by "|less")*
 
     By default, all HTS apps output tab formatted files to the stdout.
 
@@ -226,7 +226,7 @@ When building a new pipeline, it is almost always a good idea to use a small sub
               -L mouse_110_WT_C.stats.json -f mouse_110_WT_C.stats
     ```
 
-    * *What parameters did we use, what do they do?*
+    * *What parameters did we use, what do they do? (-1 Read1; -2 Read2; -L create stats file; -f prefix for output files)*
 
     Lets take a look at the output of stats
 
@@ -245,8 +245,8 @@ When building a new pipeline, it is almost always a good idea to use a small sub
     -rw-rw-r-- 1 jli workshop 5.0M Jun 15 15:06 mouse_110_WT_C.subset_R2.fastq.gz
     </div>
 
-    * *Which files were generated from hts\_Stats?*
-    * *Did stats change any of the data (are the contents of mouse_110_WT_C.stats_R1.fastq.gz identical to mouse_110_WT_C.subset_R1.fastq.gz)?*
+    * *Which files were generated from hts\_Stats? (mouse_110_WT_C.stats.json, mouse_110_WT_C.stats_R1.fastq.gz, mouse_110_WT_C.stats_R2.fastq.gz)*
+    * *Did stats change any of the data (are the contents of mouse_110_WT_C.stats_R1.fastq.gz identical to mouse_110_WT_C.subset_R1.fastq.gz)? (no)*
 
 1. Lets look at the file **mouse_110_WT_C.stats.json**
 
@@ -321,8 +321,8 @@ wget https://ucdavis-bioinformatics-training.github.io/2024-June-RNA-Seq-Analysi
     ```
 
     * *What parameters are needed to:*
-        1. provide a reference to hts_SeqScreener and
-        1. count but not screen occurrences?
+        1. provide a reference to hts_SeqScreener and (-s)
+        1. count but not screen occurrences? (-r)
 
 1. Run HTStream on the small test set.
 
@@ -336,7 +336,7 @@ wget https://ucdavis-bioinformatics-training.github.io/2024-June-RNA-Seq-Analysi
 
     * *Take look at the file mouse_110_WT_C.rrna.json*
 
-    * *How many reads were identified as rRNA?*
+    * *How many reads were identified as rRNA? (258)*
 
     * *What fraction of reads were identified as rRNA, do you think cleanup worked well for this sample?*
 
@@ -359,7 +359,7 @@ wget https://ucdavis-bioinformatics-training.github.io/2024-June-RNA-Seq-Analysi
     **Questions**
     * *What new parameters did we use here?*
 
-    * *What parameter is SeqScreener using that specifies how reads are input?*
+    * *What parameter is SeqScreener using that specifies how reads are input? (using |)*
 
     * *Look at the file mouse_110_WT_C.streamed.json*
 
@@ -371,7 +371,7 @@ wget https://ucdavis-bioinformatics-training.github.io/2024-June-RNA-Seq-Analysi
 
         * *hts_Stats --> hts_SeqScreener discard PhiX  --> hts_SeqScreener count rRNA and output*
 
-        * *Check the JSON file that is produced. Were any PhiX reads identified?
+        * *Check the JSON file that is produced. Were any PhiX reads identified? (1)
 
     * *Try to figure out how to use hts_Stats in combination with grep to search for reads that contain the sequence "CCGTCTTCTGCTTG". How many were there? Do you notice anything strange about them?
 
@@ -549,13 +549,13 @@ Note the patterns:
 * All other parameters are algorithm specific, can review using --help
 
 **Questions**
-* *Review the final json output, how many reads do we have left?*
+* *Review the final json output, how many reads do we have left? (74237)*
 
 * *Confirm that number by counting the number of reads in the final output files.*
 
-* *How many reads had adapters that were cut off?*
+* *How many reads had adapters that were cut off? (7737)*
 
-* *How many PCR duplicates were there?*
+* *How many PCR duplicates were there? (24455)*
 
 * *Anything else interesting?*
 
