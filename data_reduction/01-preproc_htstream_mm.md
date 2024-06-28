@@ -198,7 +198,7 @@ When building a new pipeline, it is almost always a good idea to use a small sub
 
     * *What happens if you run hts_Stats without piping output to out.tab? (results are output to the screen)*
 
-    * *Can you think of a way to view the output from hts_Stats in __less__ without creating out.tab? (by replacing "> out.tab" by ```|``` less)*
+    * *Can you think of a way to view the output from hts_Stats in __less__ without creating out.tab?* (by replacing "> out.tab" by ```|``` less)
 
     By default, all HTS apps output tab formatted files to the stdout.
 
@@ -359,7 +359,7 @@ wget https://ucdavis-bioinformatics-training.github.io/2024-June-RNA-Seq-Analysi
     **Questions**
     * *What new parameters did we use here?*
 
-    * *What parameter is SeqScreener using that specifies how reads are input? (using ```|```)*
+    * *What parameter is SeqScreener using that specifies how reads are input?* (using ```|```)
 
     * *Look at the file mouse_110_WT_C.streamed.json*
 
@@ -371,7 +371,7 @@ wget https://ucdavis-bioinformatics-training.github.io/2024-June-RNA-Seq-Analysi
 
         * *hts_Stats --> hts_SeqScreener discard PhiX  --> hts_SeqScreener count rRNA and output*
 
-        * *Check the JSON file that is produced. Were any PhiX reads identified? (1)
+        * *Check the JSON file that is produced. Were any PhiX reads identified?* (1)
 
     * *Try to figure out how to use hts_Stats in combination with grep to search for reads that contain the sequence "CCGTCTTCTGCTTG". How many were there? Do you notice anything strange about them?
 
@@ -750,7 +750,7 @@ The JSON files output by HTStream provide this type of information.
     zcat  01-HTS_Preproc/mouse_110_WT_C/mouse_110_WT_C_R1.fastq.gz | grep  AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC | wc -l
     ```
 
-    * *What is the reduction in adapters found?*
+    * *What is the reduction in adapters found?* (1704812)
 
     * *How could you modify the cleaning pipeline in order to remove the remaining sequences?*
 
