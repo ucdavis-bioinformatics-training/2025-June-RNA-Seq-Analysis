@@ -74,10 +74,10 @@
     #FASTA="../GRCm39.primary_assembly.genome.fa"
     FASTA="/share/workshop/mrnaseq_workshop/Data/GRCm39.primary_assembly.genome.fa"
 
-    #wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M37/gencode.vM37.primary_assembly.annotation.gtf.gz
-    #gunzip gencode.vM37.primary_assembly.annotation.gtf.gz
-    #GTF="../gencode.vM37.primary_assembly.annotation.gtf"
-    GTF="/share/workshop/mrnaseq_workshop/Data/gencode.vM37.annotation.gtf"
+    #wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M37/gencode.vM37.basic.annotation.gtf.gz
+    #gunzip gencode.vM37.basic.annotation.gtf.gz
+    #GTF="../gencode.vM37.basic.annotation.gtf"
+    GTF="/share/workshop/mrnaseq_workshop/Data/gencode.vM37.basic.annotation.gtf"
 
     mkdir star.overlap100.gencode.M37
     cd star.overlap100.gencode.M37
