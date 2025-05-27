@@ -185,10 +185,10 @@ What does stranded and unstranded mean? Which is better and why? [Stranded vs Un
     and let's run STAR (via srun) on the pair of streamed test files we created earlier:
 
     ```bash
-    srun --time=15:00:00 -n 8 --mem=32g --reservation=rnaseqworkshop --account=workshop --pty /bin/bash
+    srun --time=15:00:00 -n 12 --mem=32g --reservation=rnaseqworkshop --account=workshop --pty /bin/bash
     ```
 
-    Once you've been given an interactive session we can run STAR. You can ignore the two warnings/errors and you know your on a cluster node because your server will change. Here you see I'm on tadpole, then after the srun command is successful, I am now on drove-13.
+    Once you've been given an interactive session we can run STAR. You can ignore the two warnings/errors and you know you are on a cluster node because your server will change. Here you see I'm on tadpole, then after the srun command is successful, I am now on drove-13.
 
     <div class="output">jli@ganesh:/share/workshop/mrnaseq_workshop/jli/rnaseq_example/HTS_testing$ srun --time=15:00:00 -n 8 --mem=32g --reservation=rnaseqworkshop --account=workshop --pty /bin/bash
     srun: error: spank-auks: cred forwarding failed : auks api : connection failed
