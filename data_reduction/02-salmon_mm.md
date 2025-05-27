@@ -52,7 +52,7 @@ ln -s /share/workshop/mrnaseq_workshop/jli/rnaseq_example/01-HTS_Preproc /share/
     #SBATCH --time=60
     #SBATCH --mem=15000 # Memory pool for all cores (see also --mem-per-cpu)
     #SBATCH --partition=production
-    #SBATCH --reservation=rnaworkshop
+    #SBATCH --reservation=rnaseqworkshop
     #SBATCH --account=workshop
     #SBATCH --output=slurmout/salmon-index_%A.out # File to which STDOUT will be written
     #SBATCH --error=slurmout/salmon-index_%A.err # File to which STDERR will be written
@@ -155,7 +155,7 @@ ln -s /share/workshop/mrnaseq_workshop/jli/rnaseq_example/01-HTS_Preproc /share/
     #SBATCH --time=1440
     #SBATCH --mem=20000 # Memory pool for all cores (see also --mem-per-cpu)
     #SBATCH --partition=production
-    #SBATCH --reservation=rnaworkshop
+    #SBATCH --reservation=rnaseqworkshop
     #SBATCH --account=workshop
     #SBATCH --output=slurmout/salmon_%A_%a.out # File to which STDOUT will be written
     #SBATCH --error=slurmout/salmon_%A_%a.err # File to which STDERR will be written
