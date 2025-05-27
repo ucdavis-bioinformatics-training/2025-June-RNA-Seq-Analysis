@@ -265,7 +265,7 @@ What does stranded and unstranded mean? Which is better and why? [Stranded vs Un
 
     <img src="alignment_mm_figures/index_igv1.png" alt="index_igv1" width="80%" style="border:5px solid #ADD8E6;"/>
 
-    And then navigate to the download page, [IGV download](http://software.broadinstitute.org/software/igv/download)
+    And then navigate to the download page after clicking on the __IGV desktop application__ option, [Download IGV](https://igv.org/doc/desktop/#DownloadPage/).
 
     <img src="alignment_mm_figures/index_igv2.png" alt="index_igv2" width="80%" style="border:5px solid #ADD8E6;"/>
 
@@ -331,7 +331,7 @@ What does stranded and unstranded mean? Which is better and why? [Stranded vs Un
 
     ```bash
     cd /share/workshop/mrnaseq_workshop/$USER/rnaseq_example  # We'll run this from the main directory
-    wget https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2024-June-RNA-Seq-Analysis/master/software_scripts/scripts/star.slurm
+    wget https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2025-June-RNA-Seq-Analysis/master/software_scripts/scripts/star.slurm
     less star.slurm
     ```
 
