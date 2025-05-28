@@ -55,10 +55,10 @@ navigation:
     url: data_reduction/02-tagseq_mm
 
   - heading: Data analysis
-  - title: Prepare R for data analysis
-    url: data_analysis/de_analysis_prepare_mm
   - title: Annotation from BioMart
     url: data_analysis/annotation_mm
+  - title: Prepare R for data analysis
+    url: data_analysis/de_analysis_prepare_mm
   - title: Differential Expression Analysis
     url: data_analysis/DE_Analysis_mm_with_quizzes
   - title: Pathway Analysis
