@@ -188,9 +188,9 @@ What does stranded and unstranded mean? Which is better and why? [Stranded vs Un
     srun --time=15:00:00 -n 12 --mem=32g --reservation=rnaseqworkshop --account=workshop --pty /bin/bash
     ```
 
-    Once you've been given an interactive session we can run STAR. You can ignore the two warnings/errors and you know you are on a cluster node because your server will change. Here you see I'm on tadpole, then after the srun command is successful, I am now on drove-13.
+    Once you've been given an interactive session we can run STAR. You can ignore the two warnings/errors and you know you are on a cluster node because your server will change. Here you see I'm on tadpole, then after the srun command is successful, I am now on fleet-29.
 
-    <div class="output">jli@ganesh:/share/workshop/mrnaseq_workshop/jli/rnaseq_example/HTS_testing$ srun --time=15:00:00 -n 8 --mem=32g --reservation=rnaseqworkshop --account=workshop --pty /bin/bash
+    <div class="output">jli@ganesh:/share/workshop/mrnaseq_workshop/jli/rnaseq_example/HTS_testing$ srun --time=15:00:00 -n 12 --mem=32g --reservation=rnaseqworkshop --account=workshop --pty /bin/bash
     srun: error: spank-auks: cred forwarding failed : auks api : connection failed
     srun: job 49856359 queued and waiting for resources
     srun: job 49856359 has been allocated resources
@@ -241,7 +241,7 @@ What does stranded and unstranded mean? Which is better and why? [Stranded vs Un
     **IF for some reason it didn't finish, is corrupted or you missed the session, you can copy over a completed copy.**
 
     ```bash
-    cp /share/biocore/workshops/2023-June-mRNASeq/HTS_testing/mouse_110_WT_C.htstream_Aligned.sortedByCoord.out.bam* /share/workshop/mrnaseq_workshop/$USER/rnaseq_example/HTS_testing
+    cp /share/workshop/mrnaseq_workshop/jli/rnaseq_example/HTS_testing/mouse_110_WT_C.htstream_Aligned.sortedByCoord.out.bam* /share/workshop/mrnaseq_workshop/$USER/rnaseq_example/HTS_testing
     ```
 
 2. Transfer mouse_110_WT_C.htstream_Aligned.sortedByCoord.out.bam and mouse_110_WT_C.htstream_Aligned.sortedByCoord.out.bam.bai (the index file) to your computer using scp,FileZilla or winSCP.

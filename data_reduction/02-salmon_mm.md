@@ -23,7 +23,7 @@ ln -s /share/workshop/mrnaseq_workshop/jli/rnaseq_example/01-HTS_Preproc /share/
 
 1. To align our data we will need the transcriptome (fasta) and annotation (gtf) for mouse. There are many places to find them, but we are going to get it from the [GENCODE](https://www.gencodegenes.org/mouse/).
 
-    We need to first get the urls for the transcript sequences. For RNAseq we want to use the transcript sequences and basic gene annotation. At the time of this workshop the current version of GENCODE is *M35*. You will want to update the scripts to use the current version.
+    We need to first get the urls for the transcript sequences. For RNAseq we want to use the transcript sequences and basic gene annotation. At the time of this workshop the current version of GENCODE is *M37*. You will want to update the scripts to use the current version.
 
     <img src="alignment_mm_figures/MM_transcript_sequences.png" alt="mouse_gencode1" width="80%" style="border:5px solid #ADD8E6;"/>
 
@@ -40,7 +40,7 @@ ln -s /share/workshop/mrnaseq_workshop/jli/rnaseq_example/01-HTS_Preproc /share/
 1. First we need to index the transcriptome for salmon. Lets pull down a slurm script to get and index the mouse GENCODE version of the transcriptome.
 
     ```bash
-    wget https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2024-June-RNA-Seq-Analysis/master/software_scripts/scripts/salmon_index.slurm
+    wget https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2025-June-RNA-Seq-Analysis/master/software_scripts/scripts/salmon_index.slurm
     less salmon_index.slurm
     ```
 
@@ -66,15 +66,13 @@ ln -s /share/workshop/mrnaseq_workshop/jli/rnaseq_example/01-HTS_Preproc /share/
     mkdir -p ${outpath}
     cd ${outpath}
 
-    #wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M35/gencode.vM35.transcripts.fa.gz
-    #wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M32/gencode.vM32.primary_assembly.annotation.gtf.gz
-    #gunzip gencode.vM32.primary_assembly.annotation.gtf.gz
-    #zcat gencode.vM35.transcripts.fa.gz |cat - GRCm39.primary_assembly.genome.fa > decoy.aware.gencode.vM35.transcripts.fa
+    #wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M37/gencode.vM37.transcripts.fa.gz
+    #zcat gencode.vM37.transcripts.fa.gz |cat - GRCm39.primary_assembly.genome.fa > decoy.aware.gencode.vM37.transcripts.fa
     grep "^>" /share/workshop/mrnaseq_workshop/Data/GRCm39.primary_assembly.genome.fa |cut -d " " -f 1 > decoys.txt
     sed -i -e 's/>//g' decoys.txt
 
-    TP_FASTA="/share/workshop/mranseq_workshop/Data/decoy.aware.gencode.vM35.transcripts.fa"
-    INDEX="salmon_gencode.vM35.index"
+    TP_FASTA="/share/workshop/mranseq_workshop/Data/decoy.aware.gencode.vM37.transcripts.fa"
+    INDEX="salmon_gencode.vM37.index"
 
     module load salmon
     call="salmon index -i ${INDEX} -k 31 --decoys decoys.txt --gencode -p 8 -t ${TP_FASTA}"
@@ -92,7 +90,7 @@ ln -s /share/workshop/mrnaseq_workshop/jli/rnaseq_example/01-HTS_Preproc /share/
     1. It uses wget to download the transcript fasta file from GENCODE.
     1. Uncompresses it using gunzip.
     1. Create a decoy-aware transcriptome by concatenating the genome to the end of the transcriptome and a corresponding decoys.txt file
-    1. Run Salmon indexing, using the "gencode" flag to parse the GENCODE file properly, and outputting to a new directory called "salmon_gencode.vM35.index".
+    1. Run Salmon indexing, using the "gencode" flag to parse the GENCODE file properly, and outputting to a new directory called "salmon_gencode.vM37.index".
 
 1. Run salmon indexing script when ready.
 
@@ -100,12 +98,12 @@ ln -s /share/workshop/mrnaseq_workshop/jli/rnaseq_example/01-HTS_Preproc /share/
     sbatch salmon_index.slurm
     ```
 
-    This step does not take long, about 15 minutes. You can look at the [salmon documentation](https://salmon.readthedocs.io/en/latest/salmon.html) while you wait. All of the output files will be written to the salmon_gencode.vM35.index directory.
+    This step does not take long, about 15 minutes. You can look at the [salmon documentation](https://salmon.readthedocs.io/en/latest/salmon.html) while you wait. All of the output files will be written to the salmon_gencode.vM37.index directory.
 
     **IF for some reason it didn't finish, is corrupted, or you missed the session, you can _link_ over a completed copy.**
 
     ```bash
-    ln -s /share/workshop/mrnaseq_workshop/Data/salmon_gencode.vM35.index /share/workshop/mrnaseq_workshop/$USER/rnaseq_example/References/.
+    ln -s /share/workshop/mrnaseq_workshop/Data/salmon_gencode.vM37.index /share/workshop/mrnaseq_workshop/$USER/rnaseq_example/References/.
     ```
 ## Alignments
 
@@ -125,10 +123,10 @@ ln -s /share/workshop/mrnaseq_workshop/jli/rnaseq_example/01-HTS_Preproc /share/
     ```bash
     salmon quant \
     --threads 8 \
-    --index ../References/salmon_gencode.vM35.index \
+    --index ../References/salmon_gencode.vM37.index \
         --libType A \
         --validateMappings \
-        --geneMap ../References/gencode.vM35.annotation.gtf \
+        --geneMap ../References/gencode.vM37.annotation.gtf \
         --output mouse_110_WT_C.subset.salmon \
         -1 mouse_110_WT_C.subset_R1.fastq.gz \
         -2 mouse_110_WT_C.subset_R2.fastq.gz
@@ -142,7 +140,7 @@ ln -s /share/workshop/mrnaseq_workshop/jli/rnaseq_example/01-HTS_Preproc /share/
 
     ```bash
     cd /share/workshop/mrnaseq_workshop/$USER/rnaseq_example  # We'll run this from the main directory
-    wget https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2024-June-RNA-Seq-Analysis/master/software_scripts/scripts/salmon.slurm
+    wget https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2025-June-RNA-Seq-Analysis/master/software_scripts/scripts/salmon.slurm
     less salmon.slurm
     ```
 
@@ -166,8 +164,8 @@ ln -s /share/workshop/mrnaseq_workshop/jli/rnaseq_example/01-HTS_Preproc /share/
 
     outdir="02-Salmon_alignment"
     sampfile="samples.txt"
-    REF="/share/workshop/mrnaseq_workshop/Data/salmon_gencode.vM35.index"
-    GTF="/share/workshop/mrnaseq_workshop/Data/gencode.vM35.annotation.gtf"
+    REF="/share/workshop/mrnaseq_workshop/Data/salmon_gencode.vM37.index"
+    GTF="/share/workshop/mrnaseq_workshop/Data/gencode.vM37.basic.annotation.gtf"
 
     SAMPLE=`head -n ${SLURM_ARRAY_TASK_ID} $sampfile | tail -1`
     R1="01-HTS_Preproc/$SAMPLE/${SAMPLE}_R1.fastq.gz"
@@ -253,7 +251,7 @@ ln -s /share/workshop/mrnaseq_workshop/jli/rnaseq_example/01-HTS_Preproc /share/
 
     ```bash
     cd /share/workshop/mrnaseq_workshop/$USER/rnaseq_example  # We'll run this from the main directory
-    wget https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2024-June-RNA-Seq-Analysis/master/software_scripts/scripts/salmon_stats.R
+    wget https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2025-June-RNA-Seq-Analysis/master/software_scripts/scripts/salmon_stats.R
 	module load R
 	R CMD BATCH salmon_stats.R
     ```
