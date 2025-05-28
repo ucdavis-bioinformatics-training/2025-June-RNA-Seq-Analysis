@@ -4,11 +4,11 @@ Annotation from [BioMart](https://useast.ensembl.org/biomart/martview/)  with En
 
 1. The [Biomart](https://useast.ensembl.org/biomart/martview/) start page should look like ...
 
-<img src="annotation_mm_figures/annotation_figures1.png" alt="annotation_figures1" width="80%" style="border:5px solid #ADD8E6;"/>
+  <img src="annotation_mm_figures/annotation_figures1.png" alt="annotation_figures1" width="80%" style="border:5px solid #ADD8E6;"/>
 
 1. First select the dataset, for gene expression experiment select Ensembl Genes 114 (version 114). The current version as of this workshop.
 
-<img src="annotation_mm_figures/annotation_figures2.png" alt="annotation_figures2" width="80%" style="border:5px solid #ADD8E6;"/>
+  <img src="annotation_mm_figures/annotation_figures2.png" alt="annotation_figures2" width="80%" style="border:5px solid #ADD8E6;"/>
 
 1. Then the Organism, Here Mouse genes which is based on the GRCm39 genome.
 
