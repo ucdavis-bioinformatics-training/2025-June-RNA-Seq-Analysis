@@ -19,7 +19,7 @@ hostname
 outdir="02-Salmon_alignment"
 sampfile="samples.txt"
 REF="/share/workshop/mrnaseq_workshop/Data/salmon_gencode.vM37.index"
-GTF="/share/workshop/mrnaseq_workshop/Data/gencode.vM37.annotation.gtf"
+GTF="/share/workshop/mrnaseq_workshop/Data/gencode.vM37.basic.annotation.gtf"
 
 SAMPLE=`head -n ${SLURM_ARRAY_TASK_ID} $sampfile | tail -1`
 R1="01-HTS_Preproc/$SAMPLE/${SAMPLE}_R1.fastq.gz"
