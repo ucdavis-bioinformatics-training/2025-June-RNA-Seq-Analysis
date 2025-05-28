@@ -126,7 +126,7 @@ ln -s /share/workshop/mrnaseq_workshop/jli/rnaseq_example/01-HTS_Preproc /share/
     --index ../References/salmon_gencode.vM37.index \
         --libType A \
         --validateMappings \
-        --geneMap ../References/gencode.vM37.annotation.gtf \
+        --geneMap ../References/gencode.vM37.basic.annotation.gtf \
         --output mouse_110_WT_C.subset.salmon \
         -1 mouse_110_WT_C.subset_R1.fastq.gz \
         -2 mouse_110_WT_C.subset_R2.fastq.gz

@@ -408,7 +408,7 @@ When you are done, type "q" to exit.
 
     ```bash
     cd /share/workshop/mrnaseq_workshop/$USER/rnaseq_example # We'll run this from the main directory
-    wget https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2024-June-RNA-Seq-Analysis/master/software_scripts/scripts/star_stats.sh
+    wget https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2025-June-RNA-Seq-Analysis/master/software_scripts/scripts/star_stats.sh
     bash star_stats.sh
     ```
 
