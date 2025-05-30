@@ -15,9 +15,9 @@ https://study.com/skill/practice/contrasting-the-regulation-of-gene-expression-i
 
 This intron-less structure in prokaryotic genes dictates how the RNASeq data should be processed, especially at the alignment stage.
 
-    * One option is to use an alignment tool/aligner that allows for continuous mapping of the sequencing reads to the reference genome: [__Bowtie2__](https://bowtie-bio.sourceforge.net/bowtie2/index.shtml). In the default mode (end-to-end mode), Bowtie2 searches for alignments that matches the sequencing reads from end to end. In another words, the alignments do not allow any trimming or clipping of bases from the sequencing reads. After the alignment, the quantification of gene expression can be done using [__featureCounts__](Liao Y, Smyth GK and Shi W. featureCounts: an efficient general-purpose program for assigning sequence reads to genomic features. Bioinformatics, 30(7):923-30, 2014), by supplying the gene annotation information.
+    1. One option is to use an alignment tool/aligner that allows for continuous mapping of the sequencing reads to the reference genome: [__Bowtie2__](https://bowtie-bio.sourceforge.net/bowtie2/index.shtml). In the default mode (end-to-end mode), Bowtie2 searches for alignments that matches the sequencing reads from end to end. In another words, the alignments do not allow any trimming or clipping of bases from the sequencing reads. After the alignment, the quantification of gene expression can be done using [__featureCounts__](Liao Y, Smyth GK and Shi W. featureCounts: an efficient general-purpose program for assigning sequence reads to genomic features. Bioinformatics, 30(7):923-30, 2014), by supplying the gene annotation information.
 
-    * The other option is to use an aligner that aligns/pseudo-aligns the sequencing reads to the reference transcriptome: such as salmon.
+    1. The other option is to use an aligner that aligns/pseudo-aligns the sequencing reads to the reference transcriptome: such as salmon.
 
 
 An example of processing script for RNASeq data in prokaryotes. This assumes the sequencing data has gone through quality control: adapter trimming, quality trimming, length filtering,...
