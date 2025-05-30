@@ -53,6 +53,8 @@ navigation:
     url: data_reduction/02-salmon_mm
   - title: 3' TagSeq
     url: data_reduction/02-tagseq_mm
+  - title: Prokaryotic RNASeq
+    url: data_reduction/02-bacterial
 
   - heading: Data analysis
   - title: Annotation from BioMart

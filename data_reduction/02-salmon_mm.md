@@ -245,7 +245,7 @@ ln -s /share/workshop/mrnaseq_workshop/jli/rnaseq_example/01-HTS_Preproc /share/
 
     Gene level quantification can be found in the quant.genes.sf file.
 
-    For differential expression analysis at gene level, we recommend using __tximport__ R package to import salmon quantification results. __tximport__ allows the correction for potential differential isoform usage (ie. changes to the average transcript length across samples) by calculating an offset or to calculate a bias corrected counts.
+    For differential expression analysis at gene level, we recommend using __tximport__ or __tximeta__ R package to import salmon quantification results. __tximport__ allows the correction for potential differential isoform usage (ie. changes to the average transcript length across samples) by calculating an offset or to calculate a bias corrected counts.
 
 ## Quality Assurance - Mapping statistics as QA/QC.
 
