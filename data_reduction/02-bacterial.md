@@ -1,5 +1,4 @@
 # Bacterial RNASeq data reduction workflow
-
 ## The challenge/difference
 
 The major difference between RNASeq in prokaryotes and in eukaryotes is the gene structure. In generally, there are no introns in prokaryotic genes, therefore no splicing.
@@ -20,7 +19,7 @@ This intron-less structure in prokaryotic genes dictates how the RNASeq data sho
   1. The other option is to use an aligner that aligns/pseudo-aligns the sequencing reads to the reference transcriptome: such as salmon.
 
 
-  1. An example of processing script for RNASeq data in prokaryotes. This assumes the sequencing data has gone through quality control: adapter trimming, quality trimming, length filtering,...
+1. An example of processing script for RNASeq data in prokaryotes. This assumes the sequencing data has gone through quality control: adapter trimming, quality trimming, length filtering,...
 
     <pre class="prettyprint"><code class="language-py" style="background-color:333333">#!/bin/bash
 
