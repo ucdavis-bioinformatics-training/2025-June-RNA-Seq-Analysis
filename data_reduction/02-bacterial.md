@@ -20,7 +20,10 @@ This intron-less structure in prokaryotic genes dictates how the RNASeq data sho
     * The other option is to use an aligner that aligns/pseudo-aligns the sequencing reads to the reference transcriptome: such as salmon.
 
 
-    <pre class="prettyprint"><code class="language-py" style="background-color:333333">#!/bin/bash
+An example of processing script for RNASeq data in prokaryotes. This assumes the sequencing data has gone through quality control: adapter trimming, quality trimming, length filtering,...
+
+    <pre class="prettyprint"><code class="language-py" style="background-color:333333">
+    #!/bin/bash
 
 
     #SBATCH --nodes=1
