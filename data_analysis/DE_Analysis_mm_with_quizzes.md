@@ -6,6 +6,7 @@ output:
       keep_md: TRUE
 ---
 
+
 <script>
 function buildQuiz(myq, qc){
   // variable to store the HTML output
@@ -209,7 +210,7 @@ dim(anno)
 ```
 
 ```
-## [1] 278369     12
+## [1] 78317     4
 ```
 
 ``` r
@@ -217,20 +218,13 @@ head(anno)
 ```
 
 ```
-##       Gene.stable.ID Gene.stable.ID.version Transcript.stable.ID
-## 1 ENSMUSG00000064336   ENSMUSG00000064336.1   ENSMUST00000082387
-## 2 ENSMUSG00000064337   ENSMUSG00000064337.1   ENSMUST00000082388
-## 3 ENSMUSG00000064338   ENSMUSG00000064338.1   ENSMUST00000082389
-## 4 ENSMUSG00000064339   ENSMUSG00000064339.1   ENSMUST00000082390
-## 5 ENSMUSG00000064340   ENSMUSG00000064340.1   ENSMUST00000082391
-## 6 ENSMUSG00000064341   ENSMUSG00000064341.1   ENSMUST00000082392
-##   Transcript.stable.ID.version
-## 1         ENSMUST00000082387.1
-## 2         ENSMUST00000082388.1
-## 3         ENSMUST00000082389.1
-## 4         ENSMUST00000082390.1
-## 5         ENSMUST00000082391.1
-## 6         ENSMUST00000082392.1
+##       Gene.stable.ID Gene.stable.ID.version
+## 1 ENSMUSG00000064336   ENSMUSG00000064336.1
+## 2 ENSMUSG00000064337   ENSMUSG00000064337.1
+## 3 ENSMUSG00000064338   ENSMUSG00000064338.1
+## 4 ENSMUSG00000064339   ENSMUSG00000064339.1
+## 5 ENSMUSG00000064340   ENSMUSG00000064340.1
+## 6 ENSMUSG00000064341   ENSMUSG00000064341.1
 ##                                                                  Gene.description
 ## 1   mitochondrially encoded tRNA phenylalanine [Source:MGI Symbol;Acc:MGI:102487]
 ## 2             mitochondrially encoded 12S rRNA [Source:MGI Symbol;Acc:MGI:102493]
@@ -238,20 +232,13 @@ head(anno)
 ## 4             mitochondrially encoded 16S rRNA [Source:MGI Symbol;Acc:MGI:102492]
 ## 5       mitochondrially encoded tRNA leucine 1 [Source:MGI Symbol;Acc:MGI:102482]
 ## 6 mitochondrially encoded NADH dehydrogenase 1 [Source:MGI Symbol;Acc:MGI:101787]
-##   Chromosome.scaffold.name Gene.start..bp. Gene.end..bp. Gene.name
-## 1                       MT               1            68     mt-Tf
-## 2                       MT              70          1024   mt-Rnr1
-## 3                       MT            1025          1093     mt-Tv
-## 4                       MT            1094          2675   mt-Rnr2
-## 5                       MT            2676          2750    mt-Tl1
-## 6                       MT            2751          3707    mt-Nd1
-##   Transcript.count Gene...GC.content      Gene.type
-## 1                1             30.88        Mt_tRNA
-## 2                1             35.81        Mt_rRNA
-## 3                1             39.13        Mt_tRNA
-## 4                1             35.40        Mt_rRNA
-## 5                1             44.00        Mt_tRNA
-## 6                1             37.62 protein_coding
+##   Gene.name
+## 1     mt-Tf
+## 2   mt-Rnr1
+## 3     mt-Tv
+## 4   mt-Rnr2
+## 5    mt-Tl1
+## 6    mt-Nd1
 ```
 
 ``` r
@@ -259,41 +246,27 @@ tail(anno)
 ```
 
 ```
-##            Gene.stable.ID Gene.stable.ID.version Transcript.stable.ID
-## 278364 ENSMUSG00000081737   ENSMUSG00000081737.3   ENSMUST00000115977
-## 278365 ENSMUSG00000081174   ENSMUSG00000081174.2   ENSMUST00000117541
-## 278366 ENSMUSG00000083361   ENSMUSG00000083361.5   ENSMUST00000216706
-## 278367 ENSMUSG00000083361   ENSMUSG00000083361.5   ENSMUST00000120704
-## 278368 ENSMUSG00000124950   ENSMUSG00000124950.2   ENSMUST00000267036
-## 278369 ENSMUSG00000124950   ENSMUSG00000124950.2   ENSMUST00000267037
-##        Transcript.stable.ID.version
-## 278364         ENSMUST00000115977.4
-## 278365         ENSMUST00000117541.2
-## 278366         ENSMUST00000216706.3
-## 278367         ENSMUST00000120704.2
-## 278368         ENSMUST00000267036.1
-## 278369         ENSMUST00000267037.1
-##                                                                                           Gene.description
-## 278364 olfactory receptor family 12 subfamily K member 6, pseudogene 1 [Source:MGI Symbol;Acc:MGI:3030193]
-## 278365                                            predicted gene 13439 [Source:MGI Symbol;Acc:MGI:3650780]
-## 278366               olfactory receptor family 12 subfamily K member 7 [Source:MGI Symbol;Acc:MGI:3030194]
-## 278367               olfactory receptor family 12 subfamily K member 7 [Source:MGI Symbol;Acc:MGI:3030194]
-## 278368                                                        novel transcript, antisense to RP23-458A10.2
-## 278369                                                        novel transcript, antisense to RP23-458A10.2
-##        Chromosome.scaffold.name Gene.start..bp. Gene.end..bp.  Gene.name
-## 278364                        2        36909283      36910208 Or12k6-ps1
-## 278365                        2        36926036      36926444    Gm13439
-## 278366                        2        36955758      36959663     Or12k7
-## 278367                        2        36955758      36959663     Or12k7
-## 278368                        2        35257758      35277828           
-## 278369                        2        35257758      35277828           
-##        Transcript.count Gene...GC.content              Gene.type
-## 278364                1             44.60 unprocessed_pseudogene
-## 278365                1             40.34   processed_pseudogene
-## 278366                2             36.00         protein_coding
-## 278367                2             36.00         protein_coding
-## 278368                2             41.84                 lncRNA
-## 278369                2             41.84                 lncRNA
+##           Gene.stable.ID Gene.stable.ID.version
+## 78312 ENSMUSG00000055838   ENSMUSG00000055838.5
+## 78313 ENSMUSG00000075379   ENSMUSG00000075379.5
+## 78314 ENSMUSG00000081737   ENSMUSG00000081737.3
+## 78315 ENSMUSG00000081174   ENSMUSG00000081174.2
+## 78316 ENSMUSG00000083361   ENSMUSG00000083361.5
+## 78317 ENSMUSG00000124950   ENSMUSG00000124950.2
+##                                                                                          Gene.description
+## 78312                olfactory receptor family 1 subfamily Q member 1 [Source:MGI Symbol;Acc:MGI:3030191]
+## 78313               olfactory receptor family 12 subfamily K member 5 [Source:MGI Symbol;Acc:MGI:3030192]
+## 78314 olfactory receptor family 12 subfamily K member 6, pseudogene 1 [Source:MGI Symbol;Acc:MGI:3030193]
+## 78315                                            predicted gene 13439 [Source:MGI Symbol;Acc:MGI:3650780]
+## 78316               olfactory receptor family 12 subfamily K member 7 [Source:MGI Symbol;Acc:MGI:3030194]
+## 78317                                                        novel transcript, antisense to RP23-458A10.2
+##        Gene.name
+## 78312      Or1q1
+## 78313     Or12k5
+## 78314 Or12k6-ps1
+## 78315    Gm13439
+## 78316     Or12k7
+## 78317
 ```
 
 ``` r
@@ -301,7 +274,7 @@ any(duplicated(anno$Gene.stable.ID))
 ```
 
 ```
-## [1] TRUE
+## [1] FALSE
 ```
 
 **1b\.** Derive experiment metadata from the sample names
@@ -340,6 +313,7 @@ table(metadata$mouse)
 ```
 
 Note: you can also enter group information manually, or read it in from an external file.  If you do this, it is $VERY, VERY, VERY$ important that you make sure the metadata is in the same order as the column names of the counts table.
+
 
 ## Quiz 1
 
@@ -904,20 +878,13 @@ head(top.table)
 ## ENSMUSG00000030203.18 5.554266e-17 1.628789e-13 29.18337 ENSMUSG00000030203
 ## ENSMUSG00000021990.17 8.138953e-17 1.662702e-13 28.87810 ENSMUSG00000021990
 ## ENSMUSG00000027508.16 8.504872e-17 1.662702e-13 28.83508 ENSMUSG00000027508
-##                       Gene.stable.ID.version Transcript.stable.ID
-## ENSMUSG00000020608.8    ENSMUSG00000020608.8   ENSMUST00000020931
-## ENSMUSG00000052212.7    ENSMUSG00000052212.7   ENSMUST00000063956
-## ENSMUSG00000049103.15  ENSMUSG00000049103.15   ENSMUST00000171719
-## ENSMUSG00000030203.18  ENSMUSG00000030203.18   ENSMUST00000129433
-## ENSMUSG00000021990.17  ENSMUSG00000021990.17   ENSMUST00000159169
-## ENSMUSG00000027508.16  ENSMUSG00000027508.16   ENSMUST00000161949
-##                       Transcript.stable.ID.version
-## ENSMUSG00000020608.8          ENSMUST00000020931.6
-## ENSMUSG00000052212.7          ENSMUST00000063956.7
-## ENSMUSG00000049103.15         ENSMUST00000171719.8
-## ENSMUSG00000030203.18         ENSMUST00000129433.4
-## ENSMUSG00000021990.17         ENSMUST00000159169.2
-## ENSMUSG00000027508.16         ENSMUST00000161949.8
+##                       Gene.stable.ID.version
+## ENSMUSG00000020608.8    ENSMUSG00000020608.8
+## ENSMUSG00000052212.7    ENSMUSG00000052212.7
+## ENSMUSG00000049103.15  ENSMUSG00000049103.15
+## ENSMUSG00000030203.18  ENSMUSG00000030203.18
+## ENSMUSG00000021990.17  ENSMUSG00000021990.17
+## ENSMUSG00000027508.16  ENSMUSG00000027508.16
 ##                                                                                                          Gene.description
 ## ENSMUSG00000020608.8                          structural maintenance of chromosomes 6 [Source:MGI Symbol;Acc:MGI:1914491]
 ## ENSMUSG00000052212.7                                                    CD177 antigen [Source:MGI Symbol;Acc:MGI:1916141]
@@ -925,90 +892,69 @@ head(top.table)
 ## ENSMUSG00000030203.18                                 dual specificity phosphatase 16 [Source:MGI Symbol;Acc:MGI:1917936]
 ## ENSMUSG00000021990.17                                    spermatogenesis associated 13 [Source:MGI Symbol;Acc:MGI:104838]
 ## ENSMUSG00000027508.16 phosphoprotein associated with glycosphingolipid microdomains 1 [Source:MGI Symbol;Acc:MGI:2443160]
-##                       Chromosome.scaffold.name Gene.start..bp. Gene.end..bp.
-## ENSMUSG00000020608.8                        12        11315887      11369786
-## ENSMUSG00000052212.7                         7        24443408      24459736
-## ENSMUSG00000049103.15                        9       123901987     123913594
-## ENSMUSG00000030203.18                        6       134692431     134769588
-## ENSMUSG00000021990.17                       14        60871450      61002005
-## ENSMUSG00000027508.16                        3         9752539       9898739
-##                       Gene.name Transcript.count Gene...GC.content
-## ENSMUSG00000020608.8       Smc6               12             38.40
-## ENSMUSG00000052212.7      Cd177                2             52.26
-## ENSMUSG00000049103.15      Ccr2                4             38.86
-## ENSMUSG00000030203.18    Dusp16                7             41.74
-## ENSMUSG00000021990.17   Spata13                9             47.38
-## ENSMUSG00000027508.16      Pag1                5             44.66
-##                            Gene.type mouse_110_WT_C mouse_110_WT_NC
-## ENSMUSG00000020608.8  protein_coding       6.651904        9.074018
-## ENSMUSG00000052212.7  protein_coding       8.658433        4.183675
-## ENSMUSG00000049103.15 protein_coding      10.941017        8.849074
-## ENSMUSG00000030203.18 protein_coding       5.041179        9.000487
-## ENSMUSG00000021990.17 protein_coding       7.000397        9.570003
-## ENSMUSG00000027508.16 protein_coding       7.220819        9.048607
-##                       mouse_148_WT_C mouse_148_WT_NC mouse_158_WT_C
-## ENSMUSG00000020608.8        7.063397        9.410804       6.780160
-## ENSMUSG00000052212.7        8.400820        3.655826       8.150458
-## ENSMUSG00000049103.15      11.287362        8.980688      11.103960
-## ENSMUSG00000030203.18       5.229337        9.101338       5.495884
-## ENSMUSG00000021990.17       7.373554        9.797624       7.056301
-## ENSMUSG00000027508.16       7.093831        9.137062       7.425959
-##                       mouse_158_WT_NC mouse_183_KOMIR150_C
-## ENSMUSG00000020608.8         9.174968             6.816191
-## ENSMUSG00000052212.7         3.412010             8.757043
-## ENSMUSG00000049103.15        8.745455            11.070790
-## ENSMUSG00000030203.18        9.222336             5.251592
-## ENSMUSG00000021990.17        9.742120             7.452112
-## ENSMUSG00000027508.16        9.281038             7.224881
-##                       mouse_183_KOMIR150_NC mouse_198_KOMIR150_C
-## ENSMUSG00000020608.8               9.295607             6.527885
-## ENSMUSG00000052212.7               3.544603             8.679985
-## ENSMUSG00000049103.15              8.743009            10.747693
-## ENSMUSG00000030203.18              8.920139             4.825248
-## ENSMUSG00000021990.17              9.588178             6.576745
-## ENSMUSG00000027508.16              8.841999             7.073161
-##                       mouse_198_KOMIR150_NC mouse_206_KOMIR150_C
-## ENSMUSG00000020608.8               8.981758             6.415268
-## ENSMUSG00000052212.7               3.785408             8.763092
-## ENSMUSG00000049103.15              8.533035            10.799952
-## ENSMUSG00000030203.18              9.211816             5.246865
-## ENSMUSG00000021990.17              9.329835             6.589159
-## ENSMUSG00000027508.16              8.814120             6.945408
-##                       mouse_206_KOMIR150_NC mouse_2670_KOTet3_C
-## ENSMUSG00000020608.8               8.918616            6.562165
-## ENSMUSG00000052212.7               3.659552            7.849558
-## ENSMUSG00000049103.15              8.535038           11.479697
-## ENSMUSG00000030203.18              9.503852            4.969492
-## ENSMUSG00000021990.17              9.176432            7.807240
-## ENSMUSG00000027508.16              8.863026            7.754293
-##                       mouse_2670_KOTet3_NC mouse_7530_KOTet3_C
-## ENSMUSG00000020608.8              9.510447            6.421885
-## ENSMUSG00000052212.7              4.122247            8.264054
-## ENSMUSG00000049103.15             7.544854           11.212022
-## ENSMUSG00000030203.18             9.905548            4.070243
-## ENSMUSG00000021990.17            10.638090            7.352625
-## ENSMUSG00000027508.16             9.502032            7.453258
-##                       mouse_7530_KOTet3_NC mouse_7531_KOTet3_C mouse_7532_WT_NC
-## ENSMUSG00000020608.8              9.340020            6.277701         8.845438
-## ENSMUSG00000052212.7              3.313715            9.041948         4.559088
-## ENSMUSG00000049103.15             7.239365           11.347131         9.603722
-## ENSMUSG00000030203.18             9.475139            4.104450         9.028812
-## ENSMUSG00000021990.17            10.457166            6.916742         9.527685
-## ENSMUSG00000027508.16             9.439871            7.354796         8.960182
-##                       mouse_H510_WT_C mouse_H510_WT_NC mouse_H514_WT_C
-## ENSMUSG00000020608.8         6.441870         8.995935        6.508879
-## ENSMUSG00000052212.7         8.967768         4.612915        8.792855
-## ENSMUSG00000049103.15       11.454860         9.544756       11.248271
-## ENSMUSG00000030203.18        4.178293         9.038232        4.876668
-## ENSMUSG00000021990.17        6.522529         9.461903        6.852537
-## ENSMUSG00000027508.16        6.835884         8.693900        7.198316
-##                       mouse_H514_WT_NC
-## ENSMUSG00000020608.8          9.169496
-## ENSMUSG00000052212.7          4.361021
-## ENSMUSG00000049103.15         9.036455
-## ENSMUSG00000030203.18         9.194502
-## ENSMUSG00000021990.17         9.598516
-## ENSMUSG00000027508.16         9.028988
+##                       Gene.name mouse_110_WT_C mouse_110_WT_NC mouse_148_WT_C
+## ENSMUSG00000020608.8       Smc6       6.651904        9.074018       7.063397
+## ENSMUSG00000052212.7      Cd177       8.658433        4.183675       8.400820
+## ENSMUSG00000049103.15      Ccr2      10.941017        8.849074      11.287362
+## ENSMUSG00000030203.18    Dusp16       5.041179        9.000487       5.229337
+## ENSMUSG00000021990.17   Spata13       7.000397        9.570003       7.373554
+## ENSMUSG00000027508.16      Pag1       7.220819        9.048607       7.093831
+##                       mouse_148_WT_NC mouse_158_WT_C mouse_158_WT_NC
+## ENSMUSG00000020608.8         9.410804       6.780160        9.174968
+## ENSMUSG00000052212.7         3.655826       8.150458        3.412010
+## ENSMUSG00000049103.15        8.980688      11.103960        8.745455
+## ENSMUSG00000030203.18        9.101338       5.495884        9.222336
+## ENSMUSG00000021990.17        9.797624       7.056301        9.742120
+## ENSMUSG00000027508.16        9.137062       7.425959        9.281038
+##                       mouse_183_KOMIR150_C mouse_183_KOMIR150_NC
+## ENSMUSG00000020608.8              6.816191              9.295607
+## ENSMUSG00000052212.7              8.757043              3.544603
+## ENSMUSG00000049103.15            11.070790              8.743009
+## ENSMUSG00000030203.18             5.251592              8.920139
+## ENSMUSG00000021990.17             7.452112              9.588178
+## ENSMUSG00000027508.16             7.224881              8.841999
+##                       mouse_198_KOMIR150_C mouse_198_KOMIR150_NC
+## ENSMUSG00000020608.8              6.527885              8.981758
+## ENSMUSG00000052212.7              8.679985              3.785408
+## ENSMUSG00000049103.15            10.747693              8.533035
+## ENSMUSG00000030203.18             4.825248              9.211816
+## ENSMUSG00000021990.17             6.576745              9.329835
+## ENSMUSG00000027508.16             7.073161              8.814120
+##                       mouse_206_KOMIR150_C mouse_206_KOMIR150_NC
+## ENSMUSG00000020608.8              6.415268              8.918616
+## ENSMUSG00000052212.7              8.763092              3.659552
+## ENSMUSG00000049103.15            10.799952              8.535038
+## ENSMUSG00000030203.18             5.246865              9.503852
+## ENSMUSG00000021990.17             6.589159              9.176432
+## ENSMUSG00000027508.16             6.945408              8.863026
+##                       mouse_2670_KOTet3_C mouse_2670_KOTet3_NC
+## ENSMUSG00000020608.8             6.562165             9.510447
+## ENSMUSG00000052212.7             7.849558             4.122247
+## ENSMUSG00000049103.15           11.479697             7.544854
+## ENSMUSG00000030203.18            4.969492             9.905548
+## ENSMUSG00000021990.17            7.807240            10.638090
+## ENSMUSG00000027508.16            7.754293             9.502032
+##                       mouse_7530_KOTet3_C mouse_7530_KOTet3_NC
+## ENSMUSG00000020608.8             6.421885             9.340020
+## ENSMUSG00000052212.7             8.264054             3.313715
+## ENSMUSG00000049103.15           11.212022             7.239365
+## ENSMUSG00000030203.18            4.070243             9.475139
+## ENSMUSG00000021990.17            7.352625            10.457166
+## ENSMUSG00000027508.16            7.453258             9.439871
+##                       mouse_7531_KOTet3_C mouse_7532_WT_NC mouse_H510_WT_C
+## ENSMUSG00000020608.8             6.277701         8.845438        6.441870
+## ENSMUSG00000052212.7             9.041948         4.559088        8.967768
+## ENSMUSG00000049103.15           11.347131         9.603722       11.454860
+## ENSMUSG00000030203.18            4.104450         9.028812        4.178293
+## ENSMUSG00000021990.17            6.916742         9.527685        6.522529
+## ENSMUSG00000027508.16            7.354796         8.960182        6.835884
+##                       mouse_H510_WT_NC mouse_H514_WT_C mouse_H514_WT_NC
+## ENSMUSG00000020608.8          8.995935        6.508879         9.169496
+## ENSMUSG00000052212.7          4.612915        8.792855         4.361021
+## ENSMUSG00000049103.15         9.544756       11.248271         9.036455
+## ENSMUSG00000030203.18         9.038232        4.876668         9.194502
+## ENSMUSG00000021990.17         9.461903        6.852537         9.598516
+## ENSMUSG00000027508.16         8.693900        7.198316         9.028988
 ```
 
 ``` r
@@ -1076,7 +1022,6 @@ myQuestions3 = [
 buildQuiz(myQuestions3, quizContainer3);
 submitButton3.addEventListener('click', function() {showResults(myQuestions3, quizContainer3, resultsContainer3);});
 </script>
-
 
 # Linear models and contrasts
 
@@ -1146,314 +1091,10 @@ length(which(top.table$adj.P.Val < 0.05)) # number of DE genes
 ``` r
 top.table$Gene <- rownames(top.table)
 top.table <- top.table[,c("Gene", names(top.table)[1:6])]
-top.table <- data.frame(top.table,anno[match(top.table$Gene,anno$Gene.stable.ID),],logcpm[match(top.table$Gene,rownames(logcpm)),])
+top.table <- data.frame(top.table,anno[match(top.table$Gene,anno$Gene.stable.ID.version),],logcpm[match(top.table$Gene,rownames(logcpm)),])
 
 write.table(top.table, file = "WT.C_v_KOMIR150.C.txt", row.names = F, sep = "\t", quote = F)
 ```
-
-## What if we refit our model as a two-factor model (rather than using the group variable)?
-
-Create new model matrix:
-
-``` r
-genotype <- factor(metadata$genotype, levels = c("WT", "KOMIR150", "KOTet3"))
-cell_type <- factor(metadata$cell_type, levels = c("C", "NC"))
-mouse <- factor(metadata$mouse, levels = c("110", "148", "158", "183", "198", "206", "2670", "7530", "7531", "7532", "H510", "H514"))
-mm <- model.matrix(~genotype*cell_type + mouse)
-```
-
-We are specifying that model includes effects for genotype, cell type, and the genotype-cell type interaction (which allows the differences between genotypes to differ across cell types).
-
-
-``` r
-colnames(mm)
-```
-
-```
-##  [1] "(Intercept)"                  "genotypeKOMIR150"            
-##  [3] "genotypeKOTet3"               "cell_typeNC"                 
-##  [5] "mouse148"                     "mouse158"                    
-##  [7] "mouse183"                     "mouse198"                    
-##  [9] "mouse206"                     "mouse2670"                   
-## [11] "mouse7530"                    "mouse7531"                   
-## [13] "mouse7532"                    "mouseH510"                   
-## [15] "mouseH514"                    "genotypeKOMIR150:cell_typeNC"
-## [17] "genotypeKOTet3:cell_typeNC"
-```
-
-
-``` r
-y <- voom(d, mm, plot = F)
-```
-
-```
-## Coefficients not estimable: mouse206 mouse7531
-```
-
-```
-## Warning: Partial NA coefficients for 11730 probe(s)
-```
-
-``` r
-fit <- lmFit(y, mm)
-```
-
-```
-## Coefficients not estimable: mouse206 mouse7531
-```
-
-```
-## Warning: Partial NA coefficients for 11730 probe(s)
-```
-
-``` r
-head(coef(fit))
-```
-
-```
-##                       (Intercept) genotypeKOMIR150 genotypeKOTet3   cell_typeNC
-## ENSMUSG00000033845.14    4.708462       0.05462990    0.268649174 -0.2155354720
-## ENSMUSG00000025903.15    5.401449      -0.43089665    0.026531565 -0.2587277583
-## ENSMUSG00000033813.16    5.815700       0.08600205   -0.136181133 -0.0005278043
-## ENSMUSG00000033793.13    5.426801      -0.20506884   -0.129470678 -0.2912023734
-## ENSMUSG00000090031.5     1.924746       0.37169726    1.582222475  0.1969742740
-## ENSMUSG00000025907.15    6.489574      -0.11536934   -0.009460918 -0.2886233715
-##                          mouse148    mouse158    mouse183      mouse198
-## ENSMUSG00000033845.14  0.23815323  0.15846864 -0.34172109 -0.0510355761
-## ENSMUSG00000025903.15 -0.07362720 -0.06386909  0.37901419  0.3540873736
-## ENSMUSG00000033813.16  0.04631731  0.02950469 -0.22150131 -0.0007105147
-## ENSMUSG00000033793.13 -0.19687120 -0.25117798 -0.27459863  0.0883896936
-## ENSMUSG00000090031.5  -0.11927173  0.10737774 -0.35251695  0.1651426586
-## ENSMUSG00000025907.15 -0.15011597 -0.07032668 -0.06077507  0.1789397004
-##                       mouse206   mouse2670   mouse7530 mouse7531   mouse7532
-## ENSMUSG00000033845.14       NA -0.05979453 -0.00512802        NA  0.14083941
-## ENSMUSG00000025903.15       NA  0.03826178 -0.14733611        NA  0.18395490
-## ENSMUSG00000033813.16       NA  0.17164464  0.19565799        NA  0.06251865
-## ENSMUSG00000033793.13       NA  0.21318440  0.47631353        NA -0.31871099
-## ENSMUSG00000090031.5        NA -1.10273466 -0.20420968        NA  1.89970613
-## ENSMUSG00000025907.15       NA -0.05099193 -0.11576758        NA  0.10885141
-##                         mouseH510   mouseH514 genotypeKOMIR150:cell_typeNC
-## ENSMUSG00000033845.14  0.07741864  0.14396087                   0.40365924
-## ENSMUSG00000025903.15  0.12494853  0.13854630                   0.29961159
-## ENSMUSG00000033813.16  0.04712923 -0.02516137                   0.06224567
-## ENSMUSG00000033793.13 -0.08211622 -0.17094901                   0.11999124
-## ENSMUSG00000090031.5   1.25309299  1.45687590                  -0.04729367
-## ENSMUSG00000025907.15 -0.15612992 -0.23956105                   0.09270655
-##                       genotypeKOTet3:cell_typeNC
-## ENSMUSG00000033845.14                 -0.1632824
-## ENSMUSG00000025903.15                  0.1254559
-## ENSMUSG00000033813.16                  0.1683026
-## ENSMUSG00000033793.13                 -0.2432064
-## ENSMUSG00000090031.5                   0.1392881
-## ENSMUSG00000025907.15                  0.3481709
-```
-
-``` r
-colnames(coef(fit))
-```
-
-```
-##  [1] "(Intercept)"                  "genotypeKOMIR150"            
-##  [3] "genotypeKOTet3"               "cell_typeNC"                 
-##  [5] "mouse148"                     "mouse158"                    
-##  [7] "mouse183"                     "mouse198"                    
-##  [9] "mouse206"                     "mouse2670"                   
-## [11] "mouse7530"                    "mouse7531"                   
-## [13] "mouse7532"                    "mouseH510"                   
-## [15] "mouseH514"                    "genotypeKOMIR150:cell_typeNC"
-## [17] "genotypeKOTet3:cell_typeNC"
-```
-* The coefficient genotypeKOMIR150 represents the difference in mean expression between KOMIR150 and the reference genotype (WT), _for cell type C_ (the reference level for cell type)
-* The coefficient cell_typeNC represents the difference in mean expression between cell type NC and cell type C, _for genotype WT_
-* The coefficient genotypeKOMIR150:cell_typeNC is the difference between cell types NC and C of the differences between genotypes KOMIR150 and WT (the interaction effect).
-
-Let's estimate the difference between genotypes WT and KOMIR150 in cell type C.
-
-``` r
-tmp <- contrasts.fit(fit, coef = 2) # Directly test second coefficient
-tmp <- eBayes(tmp)
-top.table <- topTable(tmp, sort.by = "P", n = Inf)
-head(top.table, 20)
-```
-
-```
-##                            logFC  AveExpr         t      P.Value    adj.P.Val
-## ENSMUSG00000030703.9   2.9716967 4.567089 14.446204 5.790525e-11 6.792286e-07
-## ENSMUSG00000044229.10  3.2249767 6.860922 11.442807 2.125096e-09 1.246369e-05
-## ENSMUSG00000030748.10 -1.7436993 7.080600 -8.954175 7.751238e-08 2.522433e-04
-## ENSMUSG00000066687.6   2.0532818 4.955459  8.888485 8.601648e-08 2.522433e-04
-## ENSMUSG00000032012.10  5.2192844 5.035597  8.721504 1.123353e-07 2.635386e-04
-## ENSMUSG00000040152.9   2.2196214 6.471345  8.547584 1.488778e-07 2.910561e-04
-## ENSMUSG00000008348.10  1.1872912 6.276497  7.785366 5.349372e-07 8.662792e-04
-## ENSMUSG00000028028.12 -0.9017897 7.232652 -7.727964 5.908128e-07 8.662792e-04
-## ENSMUSG00000141370.1  -4.6112490 3.079676 -7.412523 1.027856e-06 1.339639e-03
-## ENSMUSG00000020893.18  1.2020133 7.566695  7.029090 2.051371e-06 2.406258e-03
-## ENSMUSG00000028037.14 -5.6408258 2.287292 -6.722704 3.614748e-06 3.416293e-03
-## ENSMUSG00000055435.7   1.3675279 4.998617  6.711885 3.688649e-06 3.416293e-03
-## ENSMUSG00000121395.2   6.0838438 2.091902  6.631863 4.286412e-06 3.416293e-03
-## ENSMUSG00000039146.6  -7.4650562 0.152343 -6.623669 4.353061e-06 3.416293e-03
-## ENSMUSG00000030365.12 -1.0001775 6.602540 -6.621769 4.368661e-06 3.416293e-03
-## ENSMUSG00000028619.16 -3.2154665 4.629995 -6.346913 7.369474e-06 5.253976e-03
-## ENSMUSG00000024772.10  1.2789019 6.357753  6.329900 7.614457e-06 5.253976e-03
-## ENSMUSG00000051495.9   0.8463233 7.170625  6.069619 1.261947e-05 8.223687e-03
-## ENSMUSG00000042105.19  0.6827999 7.469612  5.896664 1.774216e-05 1.095345e-02
-## ENSMUSG00000054008.10  0.9512147 6.590688  5.707879 2.584987e-05 1.493897e-02
-##                               B
-## ENSMUSG00000030703.9  14.921781
-## ENSMUSG00000044229.10 11.883492
-## ENSMUSG00000030748.10  8.372413
-## ENSMUSG00000066687.6   8.177787
-## ENSMUSG00000032012.10  7.054184
-## ENSMUSG00000040152.9   7.585865
-## ENSMUSG00000008348.10  6.376564
-## ENSMUSG00000028028.12  6.197467
-## ENSMUSG00000141370.1   4.502802
-## ENSMUSG00000020893.18  4.873984
-## ENSMUSG00000028037.14  3.063695
-## ENSMUSG00000055435.7   4.548589
-## ENSMUSG00000121395.2   1.385596
-## ENSMUSG00000039146.6   1.013048
-## ENSMUSG00000030365.12  4.333990
-## ENSMUSG00000028619.16  3.483991
-## ENSMUSG00000024772.10  3.707554
-## ENSMUSG00000051495.9   3.076110
-## ENSMUSG00000042105.19  2.691159
-## ENSMUSG00000054008.10  2.413960
-```
-
-``` r
-length(which(top.table$adj.P.Val < 0.05)) # number of DE genes
-```
-
-```
-## [1] 43
-```
-We get the same results as with the model where each coefficient corresponded to a group mean.  In essence, these are the _same_ model, so use whichever is most convenient for what you are estimating.
-
-The interaction effects genotypeKOMIR150:cell_typeNC are easier to estimate and test in this setup.
-
-``` r
-head(coef(fit))
-```
-
-```
-##                       (Intercept) genotypeKOMIR150 genotypeKOTet3   cell_typeNC
-## ENSMUSG00000033845.14    4.708462       0.05462990    0.268649174 -0.2155354720
-## ENSMUSG00000025903.15    5.401449      -0.43089665    0.026531565 -0.2587277583
-## ENSMUSG00000033813.16    5.815700       0.08600205   -0.136181133 -0.0005278043
-## ENSMUSG00000033793.13    5.426801      -0.20506884   -0.129470678 -0.2912023734
-## ENSMUSG00000090031.5     1.924746       0.37169726    1.582222475  0.1969742740
-## ENSMUSG00000025907.15    6.489574      -0.11536934   -0.009460918 -0.2886233715
-##                          mouse148    mouse158    mouse183      mouse198
-## ENSMUSG00000033845.14  0.23815323  0.15846864 -0.34172109 -0.0510355761
-## ENSMUSG00000025903.15 -0.07362720 -0.06386909  0.37901419  0.3540873736
-## ENSMUSG00000033813.16  0.04631731  0.02950469 -0.22150131 -0.0007105147
-## ENSMUSG00000033793.13 -0.19687120 -0.25117798 -0.27459863  0.0883896936
-## ENSMUSG00000090031.5  -0.11927173  0.10737774 -0.35251695  0.1651426586
-## ENSMUSG00000025907.15 -0.15011597 -0.07032668 -0.06077507  0.1789397004
-##                       mouse206   mouse2670   mouse7530 mouse7531   mouse7532
-## ENSMUSG00000033845.14       NA -0.05979453 -0.00512802        NA  0.14083941
-## ENSMUSG00000025903.15       NA  0.03826178 -0.14733611        NA  0.18395490
-## ENSMUSG00000033813.16       NA  0.17164464  0.19565799        NA  0.06251865
-## ENSMUSG00000033793.13       NA  0.21318440  0.47631353        NA -0.31871099
-## ENSMUSG00000090031.5        NA -1.10273466 -0.20420968        NA  1.89970613
-## ENSMUSG00000025907.15       NA -0.05099193 -0.11576758        NA  0.10885141
-##                         mouseH510   mouseH514 genotypeKOMIR150:cell_typeNC
-## ENSMUSG00000033845.14  0.07741864  0.14396087                   0.40365924
-## ENSMUSG00000025903.15  0.12494853  0.13854630                   0.29961159
-## ENSMUSG00000033813.16  0.04712923 -0.02516137                   0.06224567
-## ENSMUSG00000033793.13 -0.08211622 -0.17094901                   0.11999124
-## ENSMUSG00000090031.5   1.25309299  1.45687590                  -0.04729367
-## ENSMUSG00000025907.15 -0.15612992 -0.23956105                   0.09270655
-##                       genotypeKOTet3:cell_typeNC
-## ENSMUSG00000033845.14                 -0.1632824
-## ENSMUSG00000025903.15                  0.1254559
-## ENSMUSG00000033813.16                  0.1683026
-## ENSMUSG00000033793.13                 -0.2432064
-## ENSMUSG00000090031.5                   0.1392881
-## ENSMUSG00000025907.15                  0.3481709
-```
-
-``` r
-colnames(coef(fit))
-```
-
-```
-##  [1] "(Intercept)"                  "genotypeKOMIR150"            
-##  [3] "genotypeKOTet3"               "cell_typeNC"                 
-##  [5] "mouse148"                     "mouse158"                    
-##  [7] "mouse183"                     "mouse198"                    
-##  [9] "mouse206"                     "mouse2670"                   
-## [11] "mouse7530"                    "mouse7531"                   
-## [13] "mouse7532"                    "mouseH510"                   
-## [15] "mouseH514"                    "genotypeKOMIR150:cell_typeNC"
-## [17] "genotypeKOTet3:cell_typeNC"
-```
-
-
-``` r
-tmp <- contrasts.fit(fit, coef = 16) # Test genotypeKOMIR150:cell_typeNC
-tmp <- eBayes(tmp)
-top.table <- topTable(tmp, sort.by = "P", n = Inf)
-head(top.table, 20)
-```
-
-```
-##                            logFC     AveExpr         t      P.Value adj.P.Val
-## ENSMUSG00000030748.10  0.7390544  7.08060001  4.650236 0.0002303981 0.8208546
-## ENSMUSG00000076609.3  -4.5142134  3.49834497 -4.643668 0.0002336345 0.8208546
-## ENSMUSG00000033004.17 -0.3665325  8.79879151 -4.307884 0.0004789158 0.8208546
-## ENSMUSG00000029004.16 -0.3270252  8.44598589 -4.190064 0.0006171999 0.8208546
-## ENSMUSG00000015501.11 -0.8352538  5.52021064 -4.170661 0.0006435763 0.8208546
-## ENSMUSG00000049313.9   0.3264694  9.80316583  4.144281 0.0006812759 0.8208546
-## ENSMUSG00000030724.8  -2.8715178  1.02595232 -4.065743 0.0008072521 0.8208546
-## ENSMUSG00000026357.4   0.9475473  4.41972615  4.055564 0.0008252168 0.8208546
-## ENSMUSG00000004110.19 -3.5045008  0.67945300 -3.999537 0.0009315592 0.8208546
-## ENSMUSG00000054387.14 -0.3335513  7.97782097 -3.925392 0.0010938180 0.8208546
-## ENSMUSG00000037020.17 -0.9349406  4.01462658 -3.876765 0.0012153822 0.8208546
-## ENSMUSG00000029647.16 -0.3309890  7.49409004 -3.777531 0.0015071918 0.8208546
-## ENSMUSG00000043091.10  1.0679979  4.24666654  3.769294 0.0015343609 0.8208546
-## ENSMUSG00000005533.11 -0.8573661  5.63111534 -3.760726 0.0015631477 0.8208546
-## ENSMUSG00000020644.10  0.6993560  6.78825199  3.744335 0.0016197266 0.8208546
-## ENSMUSG00000024772.10 -0.6684372  6.35775254 -3.738277 0.0016411498 0.8208546
-## ENSMUSG00000004952.14 -0.4240024  7.82101589 -3.721743 0.0017010845 0.8208546
-## ENSMUSG00000021810.4  -0.6744246  5.16797988 -3.704422 0.0017662195 0.8208546
-## ENSMUSG00000019528.19  0.5711973  6.99001577  3.695208 0.0018018767 0.8208546
-## ENSMUSG00000026399.13 -3.6162632 -0.02308764 -3.675850 0.0018791537 0.8208546
-##                                 B
-## ENSMUSG00000030748.10  0.43361409
-## ENSMUSG00000076609.3  -1.48701353
-## ENSMUSG00000033004.17  0.06748718
-## ENSMUSG00000029004.16 -0.16168558
-## ENSMUSG00000015501.11 -0.57153684
-## ENSMUSG00000049313.9  -0.27842357
-## ENSMUSG00000030724.8  -3.20243842
-## ENSMUSG00000026357.4  -1.24970381
-## ENSMUSG00000004110.19 -3.50134887
-## ENSMUSG00000054387.14 -0.67366433
-## ENSMUSG00000037020.17 -1.81230753
-## ENSMUSG00000029647.16 -0.95603592
-## ENSMUSG00000043091.10 -1.84680020
-## ENSMUSG00000005533.11 -1.12661451
-## ENSMUSG00000020644.10 -1.04474510
-## ENSMUSG00000024772.10 -1.05338574
-## ENSMUSG00000004952.14 -1.06407629
-## ENSMUSG00000021810.4  -1.41447733
-## ENSMUSG00000019528.19 -1.11914400
-## ENSMUSG00000026399.13 -3.92713537
-```
-
-``` r
-length(which(top.table$adj.P.Val < 0.05))
-```
-
-```
-## [1] 0
-```
-
-The log fold change here is the difference between genotypes KOMIR150 and WT in the log fold changes between cell types NC and C.
-
-A gene for which this interaction effect is significant is one for which the effect of cell type differs between genotypes, and for which the effect of genotypes differs between cell types.
 
 ### More complicated models
 Specifying a different model is simply a matter of changing the calls to model.matrix (and possibly to contrasts.fit).
@@ -1668,7 +1309,7 @@ slope <- coef(fit)["ENSMUSG00000056054.10", "pH"]
 abline(a = intercept, b = slope)
 ```
 
-![](DE_Analysis_mm_with_quizzes_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
+![](DE_Analysis_mm_with_quizzes_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
 
 ``` r
 slope
@@ -1702,7 +1343,7 @@ In limma, the &beta;'s are the log fold changes.
 The error (residual) term &epsilon; is assumed to be normally distributed with a variance that is constant across the range of the data.
 
 Normally distributed means the residuals come from a distribution that looks like this:
-![](DE_Analysis_mm_with_quizzes_files/figure-html/unnamed-chunk-15-1.png)<!-- -->
+![](DE_Analysis_mm_with_quizzes_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
 
 The log2 transformation that voom applies to the counts makes the data "normal enough", but doesn't completely stabilize the variance:
 
@@ -1719,7 +1360,7 @@ tmp <- voom(d, mm, plot = T)
 ## Warning: Partial NA coefficients for 11730 probe(s)
 ```
 
-![](DE_Analysis_mm_with_quizzes_files/figure-html/unnamed-chunk-16-1.png)<!-- -->
+![](DE_Analysis_mm_with_quizzes_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
 
 The log2 counts per million are more variable at lower expression levels.  The variance weights calculated by voom address this situation.
 
@@ -1736,7 +1377,7 @@ The limma users' guide has great details on model specification.
 
 
 ``` r
-mm <- model.matrix(~genotype*cell_type + mouse)
+mm <- model.matrix(~0 + group + mouse)
 colnames(mm) <- make.names(colnames(mm))
 y <- voom(d, mm, plot = F)
 ```
@@ -1762,7 +1403,7 @@ fit <- lmFit(y, mm)
 ```
 
 ``` r
-contrast.matrix <- makeContrasts(genotypeKOMIR150, levels=colnames(coef(fit)))
+contrast.matrix <- makeContrasts(groupKOMIR150.C - groupWT.C, levels=colnames(coef(fit)))
 fit2 <- contrasts.fit(fit, contrast.matrix)
 fit2 <- eBayes(fit2)
 top.table <- topTable(fit2, coef = 1, sort.by = "P", n = 40)
@@ -1775,7 +1416,7 @@ top.table <- topTable(fit2, coef = 1, sort.by = "P", n = 40)
 volcanoplot(fit2, coef=1, highlight=8, names=rownames(fit2), main="Genotype KOMIR150 vs. WT for cell type C", cex.main = 0.8)
 ```
 
-![](DE_Analysis_mm_with_quizzes_files/figure-html/unnamed-chunk-18-1.png)<!-- -->
+![](DE_Analysis_mm_with_quizzes_files/figure-html/unnamed-chunk-13-1.png)<!-- -->
 
 ``` r
 head(anno[match(rownames(fit2), anno$Gene.stable.ID.version),
@@ -1783,13 +1424,13 @@ head(anno[match(rownames(fit2), anno$Gene.stable.ID.version),
 ```
 
 ```
-##        Gene.stable.ID.version     Gene.name
-## 113881  ENSMUSG00000033845.14        Mrpl15
-## 115120  ENSMUSG00000025903.15        Lypla1
-## 116477  ENSMUSG00000033813.16         Tcea1
-## 120393  ENSMUSG00000033793.13       Atp6v1h
-## 218953   ENSMUSG00000090031.5 4732440D04Rik
-## 122165  ENSMUSG00000025907.15        Rb1cc1
+##       Gene.stable.ID.version     Gene.name
+## 38959  ENSMUSG00000033845.14        Mrpl15
+## 39236  ENSMUSG00000025903.15        Lypla1
+## 39617  ENSMUSG00000033813.16         Tcea1
+## 40878  ENSMUSG00000033793.13       Atp6v1h
+## 65524   ENSMUSG00000090031.5 4732440D04Rik
+## 41377  ENSMUSG00000025907.15        Rb1cc1
 ```
 
 ``` r
@@ -1805,7 +1446,7 @@ identical(anno[match(rownames(fit2), anno$Gene.stable.ID.version),
 volcanoplot(fit2, coef=1, highlight=8, names=anno[match(rownames(fit2), anno$Gene.stable.ID.version), "Gene.name"], main="Genotype KOMIR150 vs. WT for cell type C", cex.main = 0.8)
 ```
 
-![](DE_Analysis_mm_with_quizzes_files/figure-html/unnamed-chunk-18-2.png)<!-- -->
+![](DE_Analysis_mm_with_quizzes_files/figure-html/unnamed-chunk-13-2.png)<!-- -->
 
 ## Heatmap
 
@@ -1814,7 +1455,7 @@ volcanoplot(fit2, coef=1, highlight=8, names=anno[match(rownames(fit2), anno$Gen
 heatmap.2(logcpm[rownames(top.table),],col=brewer.pal(11,"RdBu"),scale="row", trace="none")
 ```
 
-![](DE_Analysis_mm_with_quizzes_files/figure-html/unnamed-chunk-19-1.png)<!-- -->
+![](DE_Analysis_mm_with_quizzes_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
 
 ``` r
 anno[match(rownames(top.table), anno$Gene.stable.ID.version),
@@ -1822,47 +1463,47 @@ anno[match(rownames(top.table), anno$Gene.stable.ID.version),
 ```
 
 ```
-##        Gene.stable.ID.version     Gene.name
-## 177374   ENSMUSG00000030703.9         Gdpd3
-## 230413  ENSMUSG00000044229.10         Nxpe4
-## 228596  ENSMUSG00000030748.10         Il4ra
-## 230858   ENSMUSG00000066687.6        Zbtb16
-## 38914   ENSMUSG00000032012.10       Nectin1
-## 153715   ENSMUSG00000040152.9         Thbs1
-## 55894   ENSMUSG00000008348.10           Ubc
-## 30506   ENSMUSG00000028028.12         Alpk1
-## 232515   ENSMUSG00000141370.1              
-## 219862  ENSMUSG00000020893.18          Per1
-## 3648    ENSMUSG00000028037.14         Ifi44
-## 34826    ENSMUSG00000055435.7           Maf
-## 153789   ENSMUSG00000121395.2              
-## 3710     ENSMUSG00000039146.6        Ifi44l
-## 140629  ENSMUSG00000030365.12        Clec2i
-## 12522   ENSMUSG00000028619.16       Tceanc2
-## 90650   ENSMUSG00000024772.10          Ehd1
-## 57714    ENSMUSG00000051495.9       Irf2bp2
-## 218374  ENSMUSG00000042105.19        Inpp5f
-## 53472   ENSMUSG00000054008.10         Ndst1
-## 41283   ENSMUSG00000055994.16          Nod2
-## 29335    ENSMUSG00000076937.4         Iglc2
-## 27795   ENSMUSG00000028173.11           Wls
-## 932      ENSMUSG00000033863.3          Klf9
-## 226817   ENSMUSG00000100801.2       Gm15459
-## 64338   ENSMUSG00000070372.12        Capza1
-## 59851   ENSMUSG00000035212.15        Leprot
-## 28586   ENSMUSG00000031431.14       Tsc22d3
-## 215100   ENSMUSG00000035385.6          Ccl2
-## 58941    ENSMUSG00000051439.8          Cd14
-## 167663   ENSMUSG00000048534.8          Jaml
-## 219108  ENSMUSG00000040139.15 9430038I01Rik
-## 177498   ENSMUSG00000141229.1              
-## 36270    ENSMUSG00000003545.4          Fosb
-## 43686   ENSMUSG00000034342.10           Cbl
-## 234867  ENSMUSG00000030577.15          Cd22
-## 9619     ENSMUSG00000076609.3          Igkc
-## 58750   ENSMUSG00000015501.11        Hivep2
-## 43838    ENSMUSG00000045382.7         Cxcr4
-## 230768  ENSMUSG00000042396.11          Rbm7
+##       Gene.stable.ID.version     Gene.name
+## 55627   ENSMUSG00000030703.9         Gdpd3
+## 67823  ENSMUSG00000044229.10         Nxpe4
+## 67418  ENSMUSG00000030748.10         Il4ra
+## 67906   ENSMUSG00000066687.6        Zbtb16
+## 16402  ENSMUSG00000032012.10       Nectin1
+## 49815   ENSMUSG00000040152.9         Thbs1
+## 22876  ENSMUSG00000008348.10           Ubc
+## 13138  ENSMUSG00000028028.12         Alpk1
+## 68303   ENSMUSG00000141370.1              
+## 65762  ENSMUSG00000020893.18          Per1
+## 2080   ENSMUSG00000028037.14         Ifi44
+## 14891   ENSMUSG00000055435.7           Maf
+## 49839   ENSMUSG00000121395.2              
+## 2101    ENSMUSG00000039146.6        Ifi44l
+## 46318  ENSMUSG00000030365.12        Clec2i
+## 6183   ENSMUSG00000028619.16       Tceanc2
+## 33235  ENSMUSG00000024772.10          Ehd1
+## 23607   ENSMUSG00000051495.9       Irf2bp2
+## 65406  ENSMUSG00000042105.19        Inpp5f
+## 21760  ENSMUSG00000054008.10         Ndst1
+## 17327  ENSMUSG00000055994.16          Nod2
+## 12649   ENSMUSG00000076937.4         Iglc2
+## 11965  ENSMUSG00000028173.11           Wls
+## 688     ENSMUSG00000033863.3          Klf9
+## 67063   ENSMUSG00000100801.2       Gm15459
+## 25814  ENSMUSG00000070372.12        Capza1
+## 24366  ENSMUSG00000035212.15        Leprot
+## 12323  ENSMUSG00000031431.14       Tsc22d3
+## 64589   ENSMUSG00000035385.6          Ccl2
+## 24024   ENSMUSG00000051439.8          Cd14
+## 53346   ENSMUSG00000048534.8          Jaml
+## 65581  ENSMUSG00000040139.15 9430038I01Rik
+## 55645   ENSMUSG00000141229.1              
+## 15414   ENSMUSG00000003545.4          Fosb
+## 18191  ENSMUSG00000034342.10           Cbl
+## 68883  ENSMUSG00000030577.15          Cd22
+## 4950    ENSMUSG00000076609.3          Igkc
+## 23958  ENSMUSG00000015501.11        Hivep2
+## 18249   ENSMUSG00000045382.7         Cxcr4
+## 67885  ENSMUSG00000042396.11          Rbm7
 ```
 
 ``` r
@@ -1877,13 +1518,13 @@ identical(anno[match(rownames(top.table), anno$Gene.stable.ID.version), "Gene.st
 heatmap.2(logcpm[rownames(top.table),],col=brewer.pal(11,"RdBu"),scale="row", trace="none", labRow = anno[match(rownames(top.table), anno$Gene.stable.ID.version), "Gene.name"])
 ```
 
-![](DE_Analysis_mm_with_quizzes_files/figure-html/unnamed-chunk-19-2.png)<!-- -->
+![](DE_Analysis_mm_with_quizzes_files/figure-html/unnamed-chunk-14-2.png)<!-- -->
 
 ## 2 factor venn diagram
 
 
 ``` r
-mm <- model.matrix(~genotype*cell_type + mouse)
+mm <- model.matrix(~0 + group + mouse)
 colnames(mm) <- make.names(colnames(mm))
 y <- voom(d, mm, plot = F)
 ```
@@ -1909,7 +1550,7 @@ fit <- lmFit(y, mm)
 ```
 
 ``` r
-contrast.matrix <- makeContrasts(genotypeKOMIR150, genotypeKOMIR150 + genotypeKOMIR150.cell_typeNC, levels=colnames(coef(fit)))
+contrast.matrix <- makeContrasts(groupKOMIR150.C - groupWT.C, groupKOMIR150.NC - groupWT.NC, levels=colnames(coef(fit)))
 fit2 <- contrasts.fit(fit, contrast.matrix)
 fit2 <- eBayes(fit2)
 top.table <- topTable(fit2, coef = 1, sort.by = "P", n = 40)
@@ -1918,7 +1559,7 @@ results <- decideTests(fit2)
 vennDiagram(results, names = c("C", "NC"), main = "DE Genes Between KOMIR150 and WT by Cell Type", cex.main = 0.8)
 ```
 
-![](DE_Analysis_mm_with_quizzes_files/figure-html/unnamed-chunk-20-1.png)<!-- -->
+![](DE_Analysis_mm_with_quizzes_files/figure-html/unnamed-chunk-15-1.png)<!-- -->
 
 ## Download the Enrichment Analysis R Markdown document
 
@@ -1932,16 +1573,19 @@ sessionInfo()
 ```
 
 ```
-## R version 4.4.3 (2025-02-28)
-## Platform: aarch64-apple-darwin20
-## Running under: macOS Ventura 13.7.1
+## R version 4.5.0 (2025-04-11 ucrt)
+## Platform: x86_64-w64-mingw32/x64
+## Running under: Windows 11 x64 (build 26100)
 ## 
 ## Matrix products: default
-## BLAS:   /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRblas.0.dylib 
-## LAPACK: /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
+##   LAPACK version 3.12.1
 ## 
 ## locale:
-## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+## [1] LC_COLLATE=English_United States.utf8 
+## [2] LC_CTYPE=English_United States.utf8   
+## [3] LC_MONETARY=English_United States.utf8
+## [4] LC_NUMERIC=C                          
+## [5] LC_TIME=English_United States.utf8    
 ## 
 ## time zone: America/Los_Angeles
 ## tzcode source: internal
@@ -1950,15 +1594,14 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] gplots_3.1.3.1     RColorBrewer_1.1-3 edgeR_4.2.0        limma_3.60.2      
+## [1] gplots_3.2.0       RColorBrewer_1.1-3 edgeR_4.6.2        limma_3.64.1      
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] cli_3.6.2          knitr_1.47         rlang_1.1.3        xfun_0.44         
-##  [5] highr_0.11         KernSmooth_2.23-26 jsonlite_1.8.8     gtools_3.9.5      
-##  [9] statmod_1.5.0      htmltools_0.5.8.1  sass_0.4.9         locfit_1.5-9.9    
-## [13] rmarkdown_2.27     grid_4.4.3         evaluate_0.23      jquerylib_0.1.4   
-## [17] caTools_1.18.2     bitops_1.0-7       fastmap_1.2.0      yaml_2.3.8        
-## [21] lifecycle_1.0.4    compiler_4.4.3     Rcpp_1.0.12        rstudioapi_0.16.0 
-## [25] lattice_0.22-6     digest_0.6.35      R6_2.5.1           bslib_0.7.0       
-## [29] tools_4.4.3        cachem_1.1.0
+##  [1] cli_3.6.5          knitr_1.50         rlang_1.1.6        xfun_0.52         
+##  [5] KernSmooth_2.23-26 jsonlite_2.0.0     gtools_3.9.5       statmod_1.5.0     
+##  [9] htmltools_0.5.8.1  sass_0.4.10        locfit_1.5-9.12    rmarkdown_2.29    
+## [13] grid_4.5.0         evaluate_1.0.3     jquerylib_0.1.4    caTools_1.18.3    
+## [17] bitops_1.0-9       fastmap_1.2.0      yaml_2.3.10        lifecycle_1.0.4   
+## [21] compiler_4.5.0     lattice_0.22-7     digest_0.6.37      R6_2.6.1          
+## [25] bslib_0.9.0        tools_4.5.0        cachem_1.1.0
 ```

@@ -66,7 +66,7 @@ d0 <- DGEList(counts)
   
 **1a\.** Read in Annotation
 ```{r read_annotation}
-anno <- read.delim("ensembl_mm_112.txt",as.is=T)
+anno <- read.delim("ensembl_mm_114.txt",as.is=T)
 dim(anno)
 head(anno)
 tail(anno)
@@ -287,60 +287,6 @@ top.table <- data.frame(top.table,anno[match(top.table$Gene,anno$Gene.stable.ID.
 write.table(top.table, file = "WT.C_v_KOMIR150.C.txt", row.names = F, sep = "\t", quote = F)
 ```
 
-## What if we refit our model as a two-factor model (rather than using the group variable)?
-
-Create new model matrix:
-```{r two_factor}
-genotype <- factor(metadata$genotype, levels = c("WT", "KOMIR150", "KOTet3"))
-cell_type <- factor(metadata$cell_type, levels = c("C", "NC"))
-mouse <- factor(metadata$mouse, levels = c("110", "148", "158", "183", "198", "206", "2670", "7530", "7531", "7532", "H510", "H514"))
-mm <- model.matrix(~genotype*cell_type + mouse)
-```
-
-We are specifying that model includes effects for genotype, cell type, and the genotype-cell type interaction (which allows the differences between genotypes to differ across cell types).
-
-```{r}
-colnames(mm)
-```
-
-```{r}
-y <- voom(d, mm, plot = F)
-fit <- lmFit(y, mm)
-head(coef(fit))
-colnames(coef(fit))
-```
-* The coefficient genotypeKOMIR150 represents the difference in mean expression between KOMIR150 and the reference genotype (WT), _for cell type C_ (the reference level for cell type)
-* The coefficient cell_typeNC represents the difference in mean expression between cell type NC and cell type C, _for genotype WT_
-* The coefficient genotypeKOMIR150:cell_typeNC is the difference between cell types NC and C of the differences between genotypes KOMIR150 and WT (the interaction effect).
-
-Let's estimate the difference between genotypes WT and KOMIR150 in cell type C.
-```{r}
-tmp <- contrasts.fit(fit, coef = 2) # Directly test second coefficient
-tmp <- eBayes(tmp)
-top.table <- topTable(tmp, sort.by = "P", n = Inf)
-head(top.table, 20)
-length(which(top.table$adj.P.Val < 0.05)) # number of DE genes
-```
-We get the same results as with the model where each coefficient corresponded to a group mean.  In essence, these are the _same_ model, so use whichever is most convenient for what you are estimating.
-
-The interaction effects genotypeKOMIR150:cell_typeNC are easier to estimate and test in this setup.
-```{r}
-head(coef(fit))
-colnames(coef(fit))
-```
-
-```{r}
-tmp <- contrasts.fit(fit, coef = 16) # Test genotypeKOMIR150:cell_typeNC
-tmp <- eBayes(tmp)
-top.table <- topTable(tmp, sort.by = "P", n = Inf)
-head(top.table, 20)
-length(which(top.table$adj.P.Val < 0.05))
-```
-
-The log fold change here is the difference between genotypes KOMIR150 and WT in the log fold changes between cell types NC and C.
-
-A gene for which this interaction effect is significant is one for which the effect of cell type differs between genotypes, and for which the effect of genotypes differs between cell types.
-
 ### More complicated models
 Specifying a different model is simply a matter of changing the calls to model.matrix (and possibly to contrasts.fit).
 
@@ -449,11 +395,11 @@ The limma users' guide has great details on model specification.
 # Simple plotting
 
 ```{r}
-mm <- model.matrix(~genotype*cell_type + mouse)
+mm <- model.matrix(~0 + group + mouse)
 colnames(mm) <- make.names(colnames(mm))
 y <- voom(d, mm, plot = F)
 fit <- lmFit(y, mm)
-contrast.matrix <- makeContrasts(genotypeKOMIR150, levels=colnames(coef(fit)))
+contrast.matrix <- makeContrasts(groupKOMIR150.C - groupWT.C, levels=colnames(coef(fit)))
 fit2 <- contrasts.fit(fit, contrast.matrix)
 fit2 <- eBayes(fit2)
 top.table <- topTable(fit2, coef = 1, sort.by = "P", n = 40)
@@ -488,11 +434,11 @@ heatmap.2(logcpm[rownames(top.table),],col=brewer.pal(11,"RdBu"),scale="row", tr
 ## 2 factor venn diagram
 
 ```{r fig.width=6, fig.height=6}
-mm <- model.matrix(~genotype*cell_type + mouse)
+mm <- model.matrix(~0 + group + mouse)
 colnames(mm) <- make.names(colnames(mm))
 y <- voom(d, mm, plot = F)
 fit <- lmFit(y, mm)
-contrast.matrix <- makeContrasts(genotypeKOMIR150, genotypeKOMIR150 + genotypeKOMIR150.cell_typeNC, levels=colnames(coef(fit)))
+contrast.matrix <- makeContrasts(groupKOMIR150.C - groupWT.C, groupKOMIR150.NC - groupWT.NC, levels=colnames(coef(fit)))
 fit2 <- contrasts.fit(fit, contrast.matrix)
 fit2 <- eBayes(fit2)
 top.table <- topTable(fit2, coef = 1, sort.by = "P", n = 40)
